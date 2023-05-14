@@ -1,4 +1,4 @@
 # elysium
 elysium blockchain helpers
 
-1. Discord bot
+1. Elysium Discord bot
