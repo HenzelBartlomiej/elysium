@@ -3,8 +3,7 @@ import os
 
 from discord.ext import commands
 
-# BOT_TOKEN = os.environ.get("BOT_TOKEN")
-
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents(messages=True, message_content=True))
 
