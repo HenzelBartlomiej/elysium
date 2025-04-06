@@ -1,0 +1,2138 @@
+Introduction
+Bitcoin introduced the concept of mining, but brute forcing the hash in the Proof of Work consensus brings no value to the world other than protecting the Bitcoin blockchain from Sybil attacks.
+
+Over the past few years, our team has been working hard on the Elysium blockchain, which was born out of the idea of quest mining. We dream of a blockchain where people earn cryptocurrency by completing quests and can level up to increase their mining power, like in role-playing games.
+
+The idea is that the leveling system can be used as a defence against Sybil attacks by allowing only high-level users to participate in consensus. In turn, consensus that does not need to include protection against Sybil attacks can be much faster and more efficient. Like Proof of Victory.
+
+As our team worked on the details of such a quest mining approach, at a certain point we realized that it could be implemented as a standalone project to test and tweak the mechanics before integrating it into the core of the Elysium blockchain.
+
+Quest mining designed specifically for blockchain, when applied in a more specific way, can take a quest platform to an unreachable level. After all, existing solutions have significant weaknesses, the most important of which are the lack of Sybil protection and poor tokenomics. The result is an overwhelming number of bots and uncertain rewards for users who do quests.
+
+We had first-hand experience of bot and multi-account flooding on a popular quest platform when we tried to assemble a decentralized group of real people as a pool of initial validators for Elysium.
+
+Thus, Questfall is a big practical step towards Elysium, with its own value, as it is intended to be the first questing platform without bots and multi-accounts, where people can actually earn money by doing meaningful quests.
+
+
+Quest Mining
+Mining, first implemented in Bitcoin, creates an economy completely different from modern capitalism by establishing a direct link between investment in the system and its development.
+While high demand for a particular security on the stock market only allows the founders of a company to cash out at a profit or speculators to make money, the high price of cryptocurrency ensures the profitability of mining, attracting new miners who add more value to the system. In the case of Bitcoin, as a result of the BTC price increase, the blockchain becomes more secure.
+
+Here and throughout, we take mining in a more abstract sense than just brute forcing a hash in Proof of Work. By mining we mean tokenomics, where tokens with a limited total supply are periodically issued in decreasing amounts, determined by a pre-defined formula, and distributed to users according to the value they add to the system.
+The mining approach has been very successful because it allows newly issued coins to be earned through valuable actions, such as creating a new block in the chain, without having to pay for them. And if we assume that such valuable actions can actually be anything, then the concept of mining fits in perfectly with the quests.
+So it's no surprise that Questfall uses mining as its core mechanic, meaning that the system rewards users with a decreasing number of Questfall Tokens (QFT) each week for various quest and infrastructure actions.
+
+The decimal precision in smart contracts allows QFT to be issued for billions of years far beyond the life of the sun.
+The quest platform requires different activities to be rewarded, and this creates a problem because there is no way to compare, for example, creating a quest and providing liquidity to the DEX pool.
+Therefore, QFT issue is divided into pre-determined proportions between different areas. It can be thought of as different mining pools, each receiving a fixed percentage of the weekly issue and distributing rewards to users based on the comparative value they bring to the system.
+In Questfall, 36% of the weekly issue is used to support the infrastructure:
+    • 1% to buy back and burn Founder NFTs;
+    • 5% for the Referral Program;
+    • 5% for the Liquidity Program;
+    • 5% to reward QFT freezing;
+    • 5% to cover project expenses;
+    • 5% to cover Gold withdrawals;
+    • 10% as founders' revenue.
+The remaining 64% of the weekly issue is used to reward quest activity:
+    • 40% to reward users for quest completion;
+    • 10% to reward authors for quest creation;
+    • 14% to seasonal reward pool (11.2% to users and 2.8% to authors).
+    • 
+As the percentage split is fixed, and the QFT issue is determined by the pre-defined formula, the number of tokens allocated to each of these pools can be accurately calculated for any given week.
+Mining approach allows to solve many problems that are not solvable otherwise. Such as supporting the infrastructure of the project, unbiased rewards for completing quests, rewards for authors that are appreciated by the community, and so on.
+But what's more important, this approach allows to build a system that rewards users based on fixed rules that can't be changed in the future, since the issuance and its distribution will be set in stone in the smart contracts with burned ownership. As a result, QFT will become publicly owned money.
+
+Each QFT token is issued by the system as a reward to users for their valuable actions, and none are pre-minted by the Team.
+
+
+Quest Feed
+The workflow of existing quest platforms assumes that users receive rewards directly from quest authors. Such an approach forces users to focus on a few specific authors (projects teams) while skipping others, as there is no point in completing just one quest from a particular author, as the reward usually requires the completion of all of the author's quests.
+This approach not only makes user rewards arbitrary and optional, but also makes authors monopolists who may not care about the quality of their quests. In addition, teams spend their own resources and see their project's promotion as the only goal to be achieved.
+As a result, the vast majority of project teams on existing quest platforms simply take the most efficient route, which requires the least amount of effort, to create quests. That is why most quests are silly tasks like joining Discord or reposting a tweet.
+Quest mining, on the other hand, assumes that users are not tied to authors - on the contrary, authors compete with each other for the attention of users, who are free to choose quests created by different authors from a single system pool.
+In Questfall, such a pool of quests is called the Quest Feed, which is the direct analogue to a post feed on any social media platform. The only difference is that the social media format does not require a mandatory reaction to the post, whereas a quest requires some proof that a user has taken a requested action.
+
+This makes Questfall similar to sites like Facebook or X.
+The Quest Feed can be thought of as a virtual exhibition where authors compete for the attention of users over the long term. The more consistently high quality quests authors create, the easier it will be for them to reach the mainstream audience in the future, and the more they will earn.
+
+Read the details in a separate section of this documentation: Quest Creation.
+This creates a very different paradigm, where instead of spending resources on motivating users, authors are rewarded according to the value they bring to the community.
+In other words, authors can earn by publishing their books, articles, lessons, music, pictures, videos and so on. Quests such as 'Read the new chapter of my book and answer the question' could become a new paradigm for making money from the creation of intellectual products in today's economy.
+This approach also makes it possible to make the world a better place through quests. For example, a high reputation author could create a quest to plant a tree or clean up an ocean, and that quest could work as a flash mob.
+
+Of course, this approach also opens up the possibility of quests causing harm to others. This problem is addressed by community moderation, where the users decides whether a reported quest is appropriate or not.
+In addition, the concepts of Quest Mining and Quest Feed do not eliminate the existing approach of teams spending resources to promote their projects.
+This can be accomplished by increasing the Quest Bounty, which will make them more visible in the Quest Feed. Of course, such a promotion will not be free and will require QFT burning, thus adding value to the entire community by making QFT a deflationary token.
+
+
+Deflationary Mining
+While the mining approach has worked very well for Bitcoin so far, it has a major problem in the long run. There is a growing imbalance between the reward given to miners and the value possessed by holders.
+When the Bitcoin blockchain started, each reward for a block gave miners a tangible share of the circulating supply, but today there are nearly 20 million BTCs in circulation, and the remaining 1 million+ will be mined over the next 125 years.
+As a result, miners get a smaller and smaller share of the circulating supply, and since they are rewarded by issuing BTCs that gain value by taking it away from existing holders, their share of Bitcoin's capitalization shrinks over time.
+This could be compared to the finances of a real-world company and how income is divided between salaries for employees and dividends for shareholders. If the simplified mining mechanism implemented in Bitcoin is applied to such a company, the dividends as a percentage of total income will grow steadily over time until they reach 100%.
+Not only does this seem unfair, but it is also dangerous for the system, as workers will eventually not earn enough.
+
+Bitcoin assumes that miners will only earn from transaction fees once BTCs are no longer issued in 2140, but this is a very different economic model and no one knows in advance whether it will work or not.
+Deflation can solve this problem, as burning tokens reduces the supply in circulation, thus increasing the miners' share. But for a deflationary model to work, the system should give something in return for burned tokens.
+In Questfall, users can burn QFT tokens to purchase off-chain Gold at a fixed price of $0.01, which can then be used on the platform for various benefits.
+
+Burning QFTs is the only way to obtain Gold, which in turn will be burned when it is paid out for the system bonuses.
+In this way, QFT tokens are issued each week to reward miners, while at the same time they are burned for Gold. This dialectic has several advantages.
+Firstly, it solves the inherent problem of Bitcoin's approach to mining, as the miners' share of the system's capitalization tends to be stable over the long term. In other words, the portion of QFT's capitalization that is used to reward miners will not decrease despite the decline in token issuance.
+The deflationary nature of QFT also implies that the number of tokens in circulation will initially increase as there are no tokens to begin with, but as the market saturates, the number of QFTs in circulation will slowly decrease over time.
+As a result, the price of QFT will rise in the long run, even if the number of active Questfall users remains constant, because the reduction in circulating supply is caused by user activity that stimulates token burning.
+This makes QFT tokenomics very different from any non-deflationary approach, which is essentially a Ponzi scheme where existing holders can only cash out at the expense of many newcomers.
+
+If we look at the price of a token as the capitalization of the project divided by the number of tokens, we can see the difference more clearly. In the conventional approach, the price goes up as the numerator (capitalization) goes up, whereas in deflation, the price goes up as the denominator (number of tokens) goes down.
+As the price of Gold is fixed in dollars, the QFT price change will not affect teams wishing to promote their projects to the Questfall audience. If someone spends stablecoins on a promotion, he will receive the same amount of Gold regardless of the price of QFT.
+Furthermore, at times when the price of QFT falls, the number of tokens burned by third-party projects will increase, as more QFTs must be burned to obtain the same amount of Gold. This leads to a rapid trend reversal as the shrinking of the circulating supply accelerates.
+The QFT price changes will only affect miners and holders, who will receive a different amount of Gold for their QFTs. And since the price of QFT tends to increase over the long term, the amount of Gold for a QFT token will also increase over time.
+This is exactly how deflation works - the longer a consumer waits, the more value he will receive for the same amount of money.
+
+Although Warren Buffett said that "the stock market is a device for transferring money from the impatient to the patient", in reality this does not work. Deflationary tokenomics is the only way to implement a system in which those who wait earn.
+Furthermore, this approach emphasizes the core advantage of mining - the increase in the price of QFT due to the influx of new money from investors will make mining more profitable, attract new users and increase the burning rate of QFT, thus making QFT more attractive to investors, creating a positive feedback loop.
+
+
+Sybil Defense
+Mining is a groundbreaking concept that has exploded the cryptocurrency space in the last decade, but it has one caveat that makes it quite difficult to implement in practice. And that is the fair distribution of rewards according to the value created by users.
+While the hash generated under the Proof of Work (PoW) consensus has no value to humans and is only needed to join the newly created block to the existing chain, its quality is easily verified by computers and is binary (either valid or not), with no way to get a valid hash by bypassing the calculations required for that.
+This makes a blockchain based on PoW a fair system, since the most profitable strategy is to follow the rules, and there are no workarounds to abuse them and gain advantage, for example through Sybil attacks.
+
+Named after a woman with dissociative identity disorder, Sybil attacks are based on creating a large number of pseudonymous identities to gain a disproportionate share of the rewards of influence in the system. In other words, multi-accounts.
+However, implementing fair mining outside of PoW, especially when the mining results are supposed to create value for humans rather than computers, seems like an impossible challenge.
+The problem is that anything meaningful to humans, such as images, stories, quests, or puzzles, cannot be measured in a purely mathematical way, because their value is inherently subjective, shaped by personal preferences, cultural trends, and contextual factors.
+To illustrate this, imagine two people drawing a dog. One might produce a simple sketch that is almost indistinguishable from a horse, while the other, a skilled artist, might produce a detailed, almost photographic painting.
+Yet the perceived value of these two creations could be very different. Some might admire the amateur drawing for its charm and creativity, while dismissing the photorealistic work as lacking originality.
+
+If we can't say which image is better and reward them equally, it encourages Sybil attacks, where an attacker creates multiple accounts to produce low-quality images and claim a larger share of the rewards, discouraging genuine effort.
+Even if there were a universally agreed-upon way to measure talent, skill, or effort, it would not solve the problem. Cultural trends and preferences evolve over time, changing the way we judge art, literature, fashion, and other creative output.
+Context is also important - what is valued in one environment may be rejected in another. For example, a drawing of a demon dog might be appreciated in a horror-themed context, but considered completely inappropriate in a kindergarten setting.
+
+Modern AIs will not help much because they are trained and do not really have their own opinion. As a result, it only takes one type of content to be misjudged, so the system can be abused and become completely broken.
+Therefore, despite the potential of mining to create value for humans, a computer system cannot be used to distribute rewards because such a system, to remain fair, would have to take into account a spectrum of quality that is only a matter of human perception.
+And if we take quality out of the equation, mining becomes worthless, since it will be much more efficient for users to put as little effort as possible into producing low quality results that are of no value to others.
+This problem has caused most crypto projects to avoid mining completely, preferring instead to pre-mint all tokens and sell them directly to users. In this way, the cryptocurrency industry has returned to historical practices, similar to the early days of the stock market over 150 years ago, when anyone could issue securities and advertise them for sale in newspapers.
+This happens precisely because of the problem of fair reward distribution under human-centric mining, and it is so difficult that it has not been solved in 15 years of explosive cryptocurrency development... Until now.
+
+Although the solution may not seem that complex once you know it, we spent several years getting it right.
+Questfall faces a full-blown quality problem because quest mining assumes that users mine QFT by completing different tasks, many of which are creative, meaning that users' completions can vary widely.
+As a result, it is impossible to create an algorithm that can judge the quality of every possible type of completion in order to avoid rewarding bad completions that do not meet minimum quality requirements.
+
+Another challenge is that many quests are completed on third-party platforms like X, YouTube, Facebook, or Discord, which restrict automated access to combat DDoS attacks and content scraping.
+But when the computer system cannot solve a problem that is trivial to humans, there is a simple solution - it must rely on the users for help. And that is exactly what Questfall does by introducing a community consensus vote for each quest completion, or in other words, community moderation.
+
+If mining in traditional PoW consists of a single rewarded activity, in Questfall there are two: quest completion and community moderation.
+While quest completion directly mines QFT, community moderation enables progression through user levels, which play a critical role in miners' earnings as the global mining reward pool is divided equally among user level groups, or leagues.
+This league-based reward segmentation makes the rewards for users in each league independent of mining activity in other leagues. It also ensures that users in a higher league will earn larger rewards due to less competition (but of course they will have to put in a lot of effort in community moderation to get there).
+The key to defending against Sybil attacks is that community moderation cannot be automated, so all users have an equal opportunity to level up, which is limited by human nature itself. Therefore, users who focus on a single account will consistently outlevel those who spread their efforts across multiple accounts.
+As a result, while it is possible to automate quest completion with bots that replicate the required actions across multiple accounts, it is a losing strategy. On the one hand, an attacker cannot maintain many high-level accounts, and on the other - low-level bots are forced to compete with each other for segmented reward within the lowest league, leaving users in higher leagues unaffected.
+
+While PoW implements consensus on top of Sybil defense, Questfall does the opposite: Sybil defense is built upon community consensus.
+Of course, a key factor in making such a level-based Sybil defense robust is the voting mechanism, which should be based on rules that prevent manipulation and abuse. And the main principle of community moderation is that the winning majority is rewarded after the vote, while the losing minority is punished.
+
+Of course, it is not as simple as that. Learn more in the Community Moderation section.
+As a result, by introducing user levels with reward segmentation, and separating mining and Sybil protection into two distinct activities - one for earning cryptocurrency and one for leveling up - Questfall achieves something unprecedented: fair mining that creates real, tangible value for people.
+This overcomes the long-standing challenge of fairly rewarding creative work in decentralized systems by leveraging the unique strengths of human collaboration. This innovation not only reboots the mining paradigm, but also paves the way for more intensive use of publicly owned money for the benefit of the majority.
+
+
+RPG System
+As shown in previous articles, Deflationary Mining has many advantages that cannot be achieved with more conventional approaches. However, it is still not a silver bullet because it creates new challenges to overcome as the main advantage of deflation becomes its main weakness.
+On the one hand, deflation makes any asset a good investment because of its potential price increase, but on the other hand, if that increase is realized, it pushes up the real cost of using the system when payments are denominated in the currency that gets stronger over time.
+
+This can be clearly seen in the examples of BTC or ETH - as the price of blockchain cryptocurrencies rises, the fees denominated in them become very expensive in dollars.
+This problem can be easily solved by introducing another token for payments. In this case, two distinct functions of money - store of value and medium of exchange - which for some reason are always combined in a single currency, are instead assigned to different assets.
+While a store of value must be deflationary to fulfil its function, the medium of exchange should not be too volatile so that prices do not fluctuate too much relative to other goods and services in the economy.
+In Questfall, deflationary QFT is the main store of value, while Gold (a dollar-based in-game currency) is used to pay into the system for mining bonuses, leveling up, or quest promotions. As a result, system prices are set in dollars and are independent of the price of QFT.
+However, this introduces another problem: since QFT tokens are burned when Gold is issued, there is nothing left on the chain to be returned in exchange for Gold when a user wants to withdraw it. In other words, there's no liquidity pool to back up user withdrawals.
+
+Standalone liquidity pools, which are typically used to support withdrawals, are a prime target for hackers, who can drain the liquidity completely, leaving in-game assets worthless.
+However, beyond liquidity pools, there are two other ways to extract value from the system.
+The first is direct and simple - mining itself. In Questfall, this approach is implemented by using a portion of the weekly QFT issue to buy back and burn Gold from users in a system auction.
+Another approach is much more complex - trading. It assumes that the role of liquidity pools is filled by a marketplace. And the more active the trading, the greater the speed and efficiency with which users can monetize their goods. In other words, demand should be high.
+To create a constant demand, Questfall implements an RPG system that fits like a glove to the user levels that are part of the protection against Sybil attacks.
+The heart of the RPG system in Questfall is the character that represents the user. The character has a number of attributes that set the default values for stamina reserve, possible inventory weight, etc.
+Users can level up their characters through proper community moderation voting or by burning Gold, both of which benefit the entire community. With each new level, users receive free attribute points that can be used to customize their character according to their chosen strategy.
+
+But more important to extracting value from the system are in-game items, which create a trade opportunity and, along with attributes, play an important role in a character's performance:
+
+    • Clothing enhances character;
+    • Potions replenish stamina;
+    • Gems are used in crafting.
+
+All RPG items (except Gems) can only be minted through loot boxes, which can be opened for free as a reward for completing quests, or by burning Gold. When minted, each RPG item is one of six rarity tiers:
+    • Common (F)
+    • Uncommon (E)
+    • Rare (D)
+    • Epic (C)
+    • Legendary (B)
+    • Mythical (A)
+
+Unlike many common RPG systems, Questfall allows users to increase the rarity of certain item types by destroying other items, or in other words, by crafting.
+Rarity tiers are a key aspect of the system, as common items (F, E, D) can only be traded for Gold, while the more rare items (C, B, A) are traded for QFT.
+
+Both of these rarity groups will be traded on the Questfall marketplace.
+In this way, a user can craft a rarer item using more accessible items purchased with Gold, and then withdraw it as NFT or sell it for QFT. This enables the user to extract value from the system through trading (exchanging in-game Gold for QFT).
+
+There are many ideas for further development of the RPG system, read more in the Future Versions article.
+
+Of course, this is just the big picture, and there are many more nuances to how Questfall's RPG system works. Fortunately, we have a number of articles that cover every aspect of the RPG system in detail. For an overview, the main takeaway is that the RPG system brings many great benefits to the platform.
+
+    • Crafting enables the extraction of Gold. By separating craftable rarity tiers into two groups - one that is traded for Gold, and another that is traded for QFT - Questfall creates a distinct mechanic for extracting value from the system.
+    • RPG makes mining more interesting. There are several types of activities that interact with each other and can be developed: crafting, mining, trading. This will allow users to master their skills and create individual, complex strategies beyond the basic quest grinding.
+    • RPG significantly increases trading activity. Since users cannot progress in all areas at the same rate, some will focus on mining while others will focus on crafting or trading. This is similar to how manufacturers and merchants provide better equipment that increases efficiency.
+    • Gold gains a lot more utility. Outside of the RPG system, Gold is only used for quest promotion or leveling up. However, item rarity tiers and crafting assume that trade and loot boxes that can be opened with Gold play a crucial role in the miners' competition.
+    • User levels gain value. With each level, characters become more powerful and specific, allowing users to not only advance to higher leagues, but also to crystallize their play style and mining strategy to gain an edge over users in the same league.
+
+
+Public Ownership
+One of the main characteristics of consciousness is self-awareness, which leads to having self-interest, usually called the human factor.
+As a result, people can create systems with rules, but when things go wrong (as they usually do sooner or later), the owners can change the rules to suit their own interests. This happens everywhere in our culture, from economics and religion to physics.
+When there is not enough money, most governments simply print more. When the doctrine of religion does not fit with economics, priests change the doctrine and allow interest on loans. When something does not fit into the model of the universe, scientists introduce dark matter and dark energy just to keep all the previous regalities and grants intact.
+What makes Bitcoin unique is that it is the first man-made system where there is no owner who controls the system and can change the rules for personal gain.
+
+Before that, only the laws of physics were such a system. But they are not created by man.
+However, it is almost impossible to create a perfect system on the first try.
+For example, Bitcoin had a bug that allowed 184 billion BTCs to be created in 2010 due to an integer overflow. The problem was resolved by soft forking, deleting the invalid transaction, and maintaining the 21 million BTC cap.
+It was only possible because there were not many users, most of whom read the same forum every day, and because of the involvement of Satoshi Nakamoto himself. Today, such a soft fork would be orders of magnitude more difficult to accomplish.
+This example perfectly illustrates the paradox that ownerless systems introduce. On the one hand, someone should control the system in order to develop the project and fix bugs, and on the other hand, this prevents the system from being ownerless.
+The simplest solution might be to polish the decentralized system as much as possible before launching it. But designing every possible aspect of the model without the ability to adjust it on the fly only works for the simpler systems, not for a complex platform like Questfall.
+
+For this reason, there are no projects based on smart contracts that are as popular as traditional web platforms. Crypto projects are either too simple or do not implement the main competitive advantage of the blockchain - public ownership.
+
+In Questfall, thanks to the mining approach, we solved this problem by allowing the Team to control the functionality of the platform, while implementing the most important parts of tokenomics as an ownerless subsystem.
+
+More specifically, while the code controlled by the Team that distributes the weekly rewards can theoretically be changed, and the Team can completely take over one of the weekly issues, the amount of QFTs issued in a given week is set in stone in the smart contract whose ownership is burned.
+Even further, liquidity ownership in the swap pool is also burned by the users, making it impossible not only to rug pull with unlimited issuance, but also to withdraw liquidity by anyone.
+
+Learn more in the Liquidity Program article.
+
+This approach does not prevent the Team members from being stupid and doing malicious things, but they would not be able to take all the value out of the system at once.
+Questfall developers can only tamper with a week's worth of issuance, which will be immediately noticed by users, allowing them to withdraw their assets into stable coins, as the Team will only be able to get a small fraction of the value backing the system.
+Making it impossible to take all the money out of the system at once works as the best protection possible. The Team will not even try to perform malicious actions because it is not worth it.
+
+In the long run, it is much more profitable for the Team to get the same amount of money (one week's issue) in 20 weeks through official mechanics than to abuse the system and completely kill its future potential.
+
+We believe that at some point the Team will be made up entirely of employees, and we, like all other Founder NFTs owners, want to ensure that the system is secure against the malicious actions of Team members.
+
+As a result of this approach, while the Team can develop the project by implementing new features and fixing bugs, the core of the tokenomics is decentralized and cannot be changed by anyone, including the Team.
+
+The amount of QFT issued each week, the reward share of various activities, and the liquidity backing the QFT value are set in stone in the smart contracts whose ownership is burned.
+
+
+Quest Mining
+Overview
+Although we wrote in the Sybil Defense article that mining in Questfall consists of two main activities, this was done for simplicity, as there are actually three complementary activities that make Quest Mining possible.
+
+    • Quest Creation Authors earn weekly and seasonal QFT rewards by creating quests.
+    • Quest Completion Users earn weekly and seasonal QFT rewards by completing quests.
+    • Community Moderation Moderators earn Silver that can be used to level up or promote quests.
+
+These activities are open to everyone, so a user can create a quest, complete quests from the feed, and moderate completions all in one day.
+Quest completion and quest creation produce different types of value that cannot be compared. These two activities also rely on different core mechanics. While quest completion relies heavily on the individual mining power and mining boost, quest creation relies on author karma (reputation).
+For this reason, there are two separate reward pools each week and season: one for users who complete quests and one for authors who create them. These pools are formed using 64% of the weekly QFT issue.
+
+Reward Pool|Week|Season|Total
+Quest Creation|10%|2.80%|12.80%
+Quest Completion|40%|11.20%|51.20%
+Total|50%|14%|64%
+
+The weekly reward pool is distributed immediately upon QFT release, the Seasonal Reward Pool is distributed at the end of the season.
+While quest completion and quest creation create two separate groups of competitors for QFT issuance, community moderation allows users to earn Silver, which can be issued in any amount, but cannot be withdrawn and can only be used to improve the mining performance of the first two activities.
+As a result, each of the three main mining activities in Questfall offers different rewards and relies on completely different reward distribution mechanics.
+
+Quest Creation (10%)
+Existing quest platforms require authors to spend resources on user rewards. In contrast, Questfall rewards users for completing quests on behalf of the system. Even better, authors are rewarded with 10% of the weekly QFT issue for creating popular quests.
+
+This creates a new authoring paradigm that coexists with the traditional one - while some project teams can still use money to promote their quests to the Questfall audience, other authors can earn from their creativity without any investment.
+
+In Questfall, authors can create quests with any tasks that do not break the rules, but the system must ensure that users have actually performed the required quest actions to keep mining fair. Therefore, there are several predefined types of quests, each with its own way of completion that ensures the system can properly validate them.
+
+New quest types will be implemented as Questfall evolves.
+
+The first group of quests have the same correct answers for everyone and can therefore be validated instantly by the system without community moderation. Validating the completion of these quests is inexpensive in terms of system load, so the system allows multiple attempts to complete them.
+
+    • Text - a user must enter text that is evaluated against one or more predefined correct answers.
+    • Quiz - a user has to choose between several options, one of which is secretly the correct one.
+    • Survey - a user must select one of the options, each of which is considered correct.
+
+The second group requires community moderation for each completion and therefore only allows one attempt to complete the quest, as such an approach places a heavy load on the system in terms of moderator work.
+
+    • Action - a user must perform an action on a third-party platform and provide a link and screenshot for moderation.
+    • Transaction - a user must provide a link and screenshot of a specific transaction in the given blockchain.
+
+The number of users who complete a quest is directly affected by its position in the Quest Feed, which is ordered by the quest's reward. In other words, to make a popular quest, an author should set a relatively high Quest Bounty.
+
+Of course, the reward is not the only factor people rely on when choosing a quest to complete - a high Bounty just ensures that people will notice the quest.
+
+As a result, authors compete with each other for users' attention through the Quest Bounty, which can only be set by burning Silver. To provide room for author competition while keeping the Bounty capped, the Silver price of each Bounty point increases exponentially.
+Since Silver can be earned by participating in community moderation, authors are not forced to spend money to promote their quests.
+
+To support talented and dedicated creators who create quests that the community values, they will receive up to a 90% discount, depending on their Karma, when paying for the Quest Bounty.
+
+Therefore, in order to make a quest popular, which will allow project teams to attract new users or creators to earn, authors should burn Silver, which can only be acquired through QFT burning or through proper moderation, both of which add value to the community.
+
+In addition, to be successful in the long run, an author should create quests that are highly rated by the community, thus earning Karma, which gives a huge boost to the promotion of subsequent quests.
+
+Workspaces
+While many creators prefer to work individually, there are also many situations where content is created by an entire team of different specialists.
+
+For this reason, although we use the word "authors" throughout this documentation, quests do not actually belong to users, but rather to Workspaces, which serve as collaborative environments for creating and managing quests.
+
+Workspaces also act as author profiles that are visible to all users.
+
+Each user in Questfall can only create one Workspace and automatically becomes its owner. However, since Workspaces implement the role-based permissions model, owners can define different roles with custom permissions and invite other users.
+
+Therefore, users can be part of an unlimited number of Workspaces to which they have been invited.
+
+Workspace Roles|Workspace  Permissions
+Owner|Deposit Silver to Workspace balance; Claim and withdraw QFT rewards received by Workspace; Define roles and the permissions associated with them
+Assignable|Create quest drafts;  Publish drafts by spending Silver on the Quest Bounty;  Purchase banner promotion slots with Silver;  Edit the Workspace design and description;  Assign roles and invite users
+
+To make it easier for members of a Workspace to navigate, quests are divided into four different groups based on their status:
+    • Drafts. Drafts of new quests that have not yet been published.
+    • Active. Published quests that users are currently completing for a reward.
+    • Banned. Quests that were published, but got reported and then banned.
+    • Ended. Quests that are no longer active, as they have expired.
+
+As a result, the Workspace implementation makes it possible to simulate the workflow of an entire magazine newsroom, if necessary. The owner can focus only on costs and profits, while hired users can handle all content-related tasks.
+
+Workspaces have separate Silver balances from their owners, and once deposited, Silver can only be used to pay for Quest Bounties and cannot be withdrawn. This is necessary to allow users to donate to their favorite authors in future versions of Questfall.
+
+
+Quest Bounty
+In Questfall, anyone can create a quest and publish it to the Quest Feed for other users to complete. However, this opens the door to all kinds of abuse and manipulation, such as Sybil attacks, DDoS attacks, spamming, and scamming.
+
+To protect the system from all of these threats, every published quest should have a Bounty that requires the burning of Silver. And since Silver can only be earned by burning Gold or through proper moderation, in order to publish a quest, an author should first earn Silver by providing value to the entire community.
+
+This puts creators who want to monetize their content for free on an equal footing with projects that have marketing budgets.
+
+The Quest Bounty determines how many mining points the user will receive for completing the quest, since the quest reward is calculated as the product of the bounty and the user's personal parameters, such as individual mining power and mining boost.
+
+The Quest Bounty also directly affects a quest's position in the feed, since it is sorted based on the rewards users can earn. So if an author offers the highest Bounty for the quest, it will be the first quest in the feed visible to everyone on the platform.
+
+Setting a relatively high Quest Bounty is the primary way to promote quests.
+
+The Bounty can range from 1 to 1000, and each additional point in the Bounty costs more Silver. For the most basic scenario, where a new author with no Karma publishes the quest for one day, the amounts of Silver required for different Quest Bounties are as follows:
+
+Bounty|Silver|USD Price
+1|100|$0.1
+10|10,000|$10
+100|1,000,000|$1,000
+1000|100,000,000|$100,000
+
+The basic formula for the amount of Silver required for a day's Bounty is:
+Silver=(10*Bounty)2
+
+The quest can be published for a period of up to 30 days, and the number of days determines the cost of a Bounty. While the first day should be paid at full price, each subsequent day will receive a 10% incremental discount.
+
+For example, publishing the quest with the Bounty of 1 for the author with no Karma for 10 days will cost 652 Silver:
+Day|Bounty  Day Cost (Silver)|Bounty  Total Cost (Silver)
+1|100|100
+2|90|190
+3|81|271
+4|73|344
+5|66|410
+6|59|469
+7|53|522
+8|48|570
+9|43|613
+10|39|652
+
+The amount of Silver required for a given Bounty and number of days in LaTeX formula:
+\text{Silver} = (10 \times \text{Bounty})^2 \times \sum_{n=1}^{\text{days}} 0.9^{n-1}
+
+In addition to the decreasing price for each consecutive day of publication, there is another global discount based on the author's Karma.
+
+Each point of Karma increases the discount exponentially from 0% to 90%.
+
+Karma|Discount (%)
+1|0
+2|0
+3|0
+4|0
+5|4
+6|20
+7|62
+8|85
+9|90
+10|90
+
+The final formula that determines the cost of a Quest Bounty in LaTeX  formula:
+\text{Silver} = (10 \times \text{Bounty})^2 \times \sum_{n=1}^{\text{days}} 0.9^{n-1} \times \left( 1 - \frac{0.9}{1 + e^{-2(\text{Karma} - 6.6)}} \right)
+
+As a result, authors with a high Karma can set a much higher Quest Bounty for the same amount of Silver and get many more completions. And since the number of completions plays a crucial role in the distribution of author rewards at the end of the week, higher Karma allows authors to earn more for less Silver.
+However, in order to maintain a high Karma while earning QFT from quests, authors will be forced to create quests that are highly rated by the community. Otherwise, a poorly rated quest can drag down an author's Karma.
+
+
+Karma
+One of the key attributes of any Workspace is its Karma, which gives users confidence in the quests they choose to complete and, more importantly, provides an exponential discount on the Quest Bounty.
+
+Karma can range from 0 for a new Workspace to 10 for a Workspace with an excellent history, and the only source of Karma is the quest ratings, also ranging from 0 to 10, that users must vote on when completing unrated quests.
+
+When a new quest is published, it will initially have an unrated status. Then, the system randomly selects users and increases the Bounty for that unrated quest, making it much more visible in the feed to only those selected users. To finalize the completion of such an unrated quest, each user must rate it from 0 to 10.
+
+Similarly, Google collects initial statistics by showing new sites on the first page when random users search for keyword phrases.
+
+Users are motivated to vote correctly because they are rewarded or penalized with Mining Boost depending on how far their rating estimate is from the average, which is based on league-based vote segmentation, similar to how moderation consensus works.
+
+The unrated quest will receive votes from users in different leagues, and the final rating will be calculated as a simple average of the league results.
+
+
+This league-based vote segmentation provides a solid defense, as no league can outvote others, and an attacker would need to have a majority of users in all leagues to manipulate quest ratings. More importantly, the votes are very diverse, and not many voters are needed to achieve valid results.
+
+The protection works reliably because users cannot choose unrated quests to complete, as such quests are assigned by the system. Thus, an attacker cannot synchronize voting from different accounts.
+
+This approach also implies that there are certain requirements for voting diversity, and if they are met, the quest could be considered to be ranked by community consensus.
+
+For example, such requirements could be an increasing odd number of users for each league, starting at the top. One user from the top league, three users from the league below, five from the next lower league, and so on.
+
+Depending on user feedback and overall experience, these consensus requirements will be adjusted after the launch of Questfall.
+
+In some cases, quests may not be able to meet the consensus requirements to be rated. For example, it may be a quest that no one wants to complete, or there may be too many new quests relative to the number of active users in the system.
+
+But more importantly, it allows the system to know with certainty that if the community consensus has been reached, it can be considered valid. And if it is not, then either the quest was not interesting enough, or the Bounty was set as low as possible, while there were many spam quests in the system.
+
+The system will prioritize quests with a higher bounty in order to rate them.
+
+In other words, quest ratings are a solid basis for calculating Karma. Therefore, Karma is built solely on quest ratings by consuming them using the 10% weighting.
+
+More specifically, Karma is updated when a new quest is rated according to the following formula in LaTeX:
+Karma_n = 0.9 \times Karma_{n-1} + 0.1 \times QuestRating_n
+
+
+As a result of this approach to Karma calculation, it is updated with each new rated quest and reacts quickly to changes in the quality of the author's quests.
+
+This also means that new authors only need to create 10 quests to get a fair estimate of their Karma and the corresponding Bounty discount, without having to invest much in the beginning.
+
+
+Rewards
+To motivate authors to create interesting, educational, or fun quests that are appreciated by the community, 10% of the weekly QFT issue will be distributed to Workspaces based on their performance during the week.
+
+Since quest completions are not protected from Sybil attacks, malicious actors can generate new accounts, quests, and their completions at will. For this reason, the reward distribution mechanics take into account author Karma and the number and variety of completions.
+
+First, the entire bank of QFTs to be rewarded at the end of the week is segmented based on Karma levels. Each higher level of Karma receives one more share of the reward distribution.
+
+Karma Range|Shares|Percentage
+0-1|0|0
+1-2|1|2.2
+2-3|2|4.4
+3-4|3|6.7
+4-5|4|8.9
+5-6|5|11.1
+6-7|6|13.3
+7-8|7|15.6
+8-9|8|17.8
+9-10|9|20
+
+
+If there are no active authors in the Karma range, its shares are set to zero and the percentage is recalculated accordingly.
+
+Within each range, the reward pool is distributed according to the author's individual mining score, which is calculated based on the number of users of different levels who have completed the quest. The more diverse the levels, the higher the mining score.
+
+To calculate the mining score in a way that takes into account the diversity of levels along with the number of users, the simple mathematical inequality is used (LaTeX format):
+(a + b)^p < a^p + b^p \quad \text{if} \quad 0 < p < 1
+
+
+More specifically, the number of users of the same level is taken to the power of 1/3, then all such bases are summed, and the result is taken to the power of 3 (LaTeX format):
+\text{MSCORE} = \left( \sum_{n=1}^{\text{levels}} \text{Completions}_n^{\frac{1}{3}} \right)^3
+
+
+This means that if a quest is completed with the same number of users, but with different levels, the mining score will be greater than if those users were all of the same level.
+
+
+
+As a result, the higher the author's Karma and the more diverse the users who complete the author's quests, the higher the author's reward at the end of the week. And because the reward pool is segmented by Karma ranges, the activity of low-Karma authors will not affect the earnings of more legitimate authors.
+
+In addition, authors who focus on creating valuable quests will be able to earn a large share of the author rewards, which could be a fortune in the future, depending on the price of QFT.
+
+We intentionally create a mechanic where the high Karma authors have a huge advantage over the low Karma ones, because many project teams do not care about their Karma and rewards, as their primary goal is to attract users to their website, not to entertain the public.
+
+
+
+Quest Completion (40%)
+
+In Questfall, users will not have to grind quests for nothing or wait for rewards that will never arrive. The mining approach ensures that the system fairly rewards miners with QFT for their weekly work in completing quests.
+
+Quest completion is considered the most important activity on the platform, and as such, the largest portion of the weekly QFT issue (40%) is dedicated to rewarding it.
+
+In fact, more than half (51.2% to be exact) of the weekly QFT issue is used to reward users for completing quests, as an additional 11.2% is used for special seasonal rewards.
+
+The weekly reward pool is divided among the leagues, where users are grouped by level and compete for their share of the league reward. Competition within each league is based on the Mining Score that users earn by the end of the week by completing quests.
+
+Each time a quest is successfully completed, the user is rewarded with a certain number of Mining Points, depending on a quest-specific Quest Bounty parameter and user-specific Mining Power and Mining Boost parameters.
+
+The formula for calculating the reward for a given quest is as follows in LaTeX format:
+\text{MiningPoints} = \text{QuestBounty} \times \left( 1 + \frac{\text{MiningPower}}{100} \right) \times \text{MiningBoost}
+
+
+
+The amount of Mining Points earned throughout the week results in an individual weekly Mining Score for each user. And the league reward pool is distributed according to each user's share of the league's total Mining Score.
+
+The individual Mining Score is simply the total number of Mining Points earned by the user during the week.
+
+In addition to Mining Points, users also receive a random Chest Shard for each quest they complete.
+
+Chest Shards, like a mosaic puzzle, make up a weekly set of up to 100 pieces, and when a user collects a full set of shards, they are rewarded with a free loot box. Therefore, the more quests a user completes in a week, the more free loot boxes they will open.
+
+Quest Bounty
+The Quest Bounty is set by the quest author in the range of 1 to 1000 by burning Silver and serves as the basis for calculating the reward for completing a quest, thus determining the order in which quests appear in the global feed.
+
+Although users will see individual rewards for the same quests in the feed, the order of the feed will remain the same for everyone, because all the Quest Bounties are multiplied by the constant made up of user-specific parameters.
+
+While the Quest Bounty concept assumes that it is the same for everyone, and therefore the order of quests in the feed is also the same, this is not always the case.
+
+The system may increase the Quest Bounty for a new unrated quest to several random users, thus motivating them to complete the quest and vote on its rating.
+
+The Quest Bounty will also change if the quest allows multiple attempts. For example, if a quest allows five retries, each failed attempt will reduce the Quest Bounty by 20%.
+
+Quest Bounties will be driven mainly by competition between authors trying to get as many completions for their quests as possible, and will increase as the platform becomes more popular.
+
+However, such competition will not benefit miners, as Bounties will increase for everyone. 
+As a result, the distribution of rewards will continue to be determined primarily by the number of quests completed from the top of the feed, as well as individual Mining Power and Mining Boost.
+
+
+Mining Power
+Mining Power is one of the many parameters that define the character of the RPG system in Questfall. It is defined in percent with an initial value of 0% and can only be increased by the RPG mechanics and can never be negative.
+
+Mining Power can be increased by investing the attribute points gained with each new level into the Mining attribute or by equipping clothing with the appropriate effects.
+
+However, Mining Power is not the only character parameter that can be improved with attribute points or clothing, as there are many other stats that can provide an advantage in various areas.
+
+Although Questfall will launch with a limited number of attributes and RPG item types, many more will be added in future releases.
+
+Thus, a user must develop a character with a limited amount of resources according to the chosen personal strategy, which may not focus on Mining Power at all.
+
+
+Mining Boost
+The Mining Boost parameter is used to incentivize users to vote correctly when estimating the rating of unrated quests. Its initial value is 1, and it increases or decreases depending on the accuracy of users' quest rating votes.
+
+When users complete unrated quests, they must choose one of eleven values (ranging from 0 to 10) to rate the quest. After the system collects enough votes, the final quest rating is calculated based on the community consensus.
+
+
+For more details on the final rating results, see the author's Karma article.
+
+In most cases, the final rating will be a fraction, but it can always be rounded to a whole number. For example, a final rating of 5.7 will be rounded to 6, a final rating of 8.9 will be rounded to 9, and so on.
+
+The system will reward users based on how far their vote is from this rounded final value. Those who match the rounded rating will have their Mining Boost parameter increased by 0.0002. Each step away will decrease the reward by 0.0001, so after two steps it becomes a penalty.
+
+To motivate users to vote for edge cases (0 and 10), if the final result is close to the edge (0, 1 or 9, 10), those who voted for 0 or 10 will be rewarded with +0.0003 to Mining Boost.
+
+Rating|0.1|1.2|2.3|3.4
+0|0.0003|0.0003|0|-0.0001
+1|0.0002|0.0002|0.0001|0
+2|0.0001|0.0001|0.0002|0.0001
+3|0|0|0.0001|0.0002
+4|-0.0001|-0.0001|0|0.0001
+5|-0.0002|-0.0002|-0.0001|0
+6|-0.0003|-0.0003|-0.0002|-0.0001
+7|-0.0004|-0.0004|-0.0003|-0.0002
+8|-0.0005|-0.0005|-0.0004|-0.0003
+9|-0.0006|-0.0006|-0.0005|-0.0004
+10|-0.0007|-0.0007|-0.0006|-0.0005
+
+
+While the Mining Boost parameter cannot go negative, it can go to zero, which cancels out the amount of Mining Points a user can earn from any quest.
+
+On the other hand, Mining Boost is capped, and the upper limit increases by 0.01 with each level. Thus, a level 100 user can have a maximum Mining Boost of 2, but to achieve this, a miner would have to have rated a lot of quests in line with the majority.
+
+As a result, correct estimating of quest rating becomes one of the key factors for the success of quest miners in the long run.
+
+Even if a user avoids unrated quests and takes no risks, the higher the league, the more he will underperform against those who keep their Mining Boost as high as possible.
+
+
+Loot Boxes
+All RPG items except Gems are released into circulation through loot boxes, which can be opened by either spending 100 Gold ($1) or collecting a full weekly set of Chest Shards.
+
+A user can collect a full weekly set of Chest Shards an unlimited number of times during a week. Next week, however, a new set will be released, making any unused shards from the previous week obsolete.
+
+By default, a loot box offers a single item based on a chance that depends on the rarity and level of the item. The higher the rarity or level, the lower the chance of receiving the item.
+
+And while users can't increase their odds of getting rarer items, they can get more than one item from a single loot box, providing the space needed for the chances of rarer items to work.
+
+The process of opening loot boxes is turn-based, and while users only have one turn by default, the higher a character's Luck attribute, the more turns a user will have when opening a loot box.
+
+The Luck attribute plays a crucial role not only in opening loot boxes, but also in collecting shards.
+
+To illustrate the mechanics, here is an example for a user with 4 turns:
+
+    • Turn 1: The user is dealt 4 cards face down and must blindly choose one. All four cards contain items, so the user is guaranteed to receive an item after the first turn.
+    • Turn 2: The user is dealt 4 more cards. One card is a "finish" card, which ends the opening process, while the remaining three are item cards, which give the user one more item and continue the opening into the next turn.
+    • Turn 3: The user is dealt another 4 cards. This time, 2 out of the 4 cards are finish cards. Choosing a finish card will end the opening, leaving the user with two items won in previous turns.
+    • Turn 4: The user is dealt 4 cards for the last time. Only 1 card contains an item, while the other 3 are finish cards. Since a hypothetical fifth turn would consist entirely of finish cards, this is the last turn. If the user selects a finish card, he will end the loot box opening with a total of 3 items. But if the user selects the item card, he will receive 4 items in total.
+
+
+
+
+RPG Attributes
+The common RPG approach assumes that users are represented by a character that becomes more powerful by investing stat points gained with each new level into pre-defined character attributes.
+
+Questfall uses the same mechanic - users gain one stat point per level and can use it to improve any of the following attributes:
+
+    • Inventory: increases the weight limit of stored items;
+    • Mining: increases Mining Power and Stamina Reserve;
+    • Crafting: increases efficiency when working with Essence or Gems;
+    • Trading: reduces marketplace fee, gives advantage on Gold withdrawal, adds marketplace slots;
+    • Recovery: increases Stamina Reserve recovery rate;
+    • Luck: increases chance of getting missing chest shards and other bonuses, adds loot box turns.
+
+There are at least two more attributes waiting to be implemented in future versions of Questfall: Magic and Warfare.
+
+Because users can allocate stat points to any attribute, they can focus on certain areas and gain specific benefits in those areas, customizing a character to fit their individual mining strategy.
+
+Of course, users can make mistakes as their characters evolve, so when users join a new league, they can redistribute attribute points once for free.
+
+However, any subsequent redistribution within that league will cost a certain amount of Gold, depending on the league. For example, in League I the cost is 1000 Gold ($10), in League II it is 2000 ($20), and so on.
+
+While the Hall is considered a tutorial and there is no cost to redistribute attribute points, for the actual league it is calculated by the formula:
+Cost_gold  = 1000*League_count?
+
+
+Inventory
+Users store their unused RPG items in their inventory, which can hold any number of items, but has a weight limit.
+
+If a user's inventory is overloaded, the user will not be able to perform actions that result in the acquisition of new items, such as opening loot boxes, making purchases from the in-game marketplace, or bringing in an item from NFT.
+
+To empty inventory, any RPG item can be scrapped for Essence, or a user can put items up for sale on the in-game marketplace, or take rarer (C,B,A) items out of inventory as NFT to the blockchain wallet.
+The count of available marketplace slots is limited, while to withdraw an item as NFT a fee should be paid in Gold. It costs 100 Gold ($1) to withdraw a C item, 300 Gold ($3) to withdraw a B item, and 900 Gold ($9) to withdraw an A item.
+
+The weight limit of the newly created character is 1 kg, and it can be further increased by adding more attribute points to the Inventory attribute - each point increases the limit by 1 kg. For example, if the Inventory attribute has 15 points, the weight limit will be 15 kg.
+
+The formula for the inventory weight limit is as follows:
+WeightLimit_grams=1000*(Inventory+1)
+
+Each point in the Inventory attribute causes the weight limit to grow linearly, while the weight of items grows as a root of the level, i.e. more slowly. Therefore, as the inventory grows, each new item takes up a smaller percentage of the total weight limit.
+
+As a result, users are motivated to increase their inventory weight limit not only to hold more rare and high-level items, which weigh more, but also to be able to hold a larger total number of items.
+
+
+Mining
+The Mining attribute increases parameters that make it easier to earn from completing quests.
+
+It increases Mining Power, which boosts the rewards for completed quests, and Stamina Reserve, which allows a user to complete more quests in one session.
+Mining Power
+Mining Power is defined as a percentage and increases the reward for each quest completed, as it is used as one of the multipliers for the Quest Bounty set by the author. 
+For example, if the author has set the Bounty to 100 and the user has 25% Mining Power, then the quest reward for that particular user will be 125 Mining Points.
+
+This does not take into account the Mining Boost parameter that can be gained by properly voting for new quest ratings.
+
+Mining Power starts at 0% and increases by 1% with each point of the Mining attribute. So if a user invests 40 points in Mining, his Mining Power will be 40%. In addition to the Mining attribute, Mining Power can also be increased by equipping clothing with the appropriate effects.
+
+
+Stamina Reserve
+Stamina is consumed when a user completes a quest and is automatically restored over time. It acts as a rate limiter, preventing bots from completing thousands of quests per second and overloading the Questfall server.
+
+In addition to its technical utility, stamina is part of an RPG system. A first-level character starts with a Stamina Reserve of 1000, and each point in the Mining attribute increases the Stamina Reserve linearly by 1000.
+
+The rate at which stamina regenerates over time is determined by the Recovery attribute.
+Stamina consumption is directly affected by the total weight of the clothing worn. The heavier the clothing, the more stamina is consumed.
+
+When not equipped, each quest consumes 10 stamina and each gram of equipped clothing increases the stamina required to complete a quest by 0.05. This forces the user to invest points in the Mining attribute, as the clothing becomes heavier upon leveling up.
+
+For example, if the equipped clothing weighs 5 kg, the amount of stamina consumed per quest will be: 
+Stamina_charged=10+5000*0.05=260.
+
+
+Crafting
+Crafting involves three types of actions: 
+    • breaking down items (scrapping), 
+    • increasing the level of items (upgrading), 
+    • and making items rarer (evolving).
+
+All three aspects of crafting benefit from investing stat points in the Crafting attribute.
+Scrapping
+Any RPG item can be scrapped. Not only does this provide Essence for upgrading or evolving items, but since Essence has no weight, it is also one of the ways to free up inventory.
+
+The higher the level and rarity of the item, the more Essence is gained from disassembling it.
+
+The amount of Essence gained from upgradable and level-less RPG items is calculated differently.
+
+Another parameter that affects the amount of Essence gained from items is the Crafting attribute. The higher is the Crafting attribute the more Essence a user will gain from the same item.
+
+For example, a user with a Crafting of 0 will gain 12 Essence from a level 10 E item. A user with a Crafting of 100 will gain 35 Essence from the same item.
+
+The amount of Essence the upgradable item will yield (LaTeX format):
+\text{Essence} = \text{floor}(0.1 \times \text{Rarity} \times \text{Level} + \sqrt{100 + \text{Crafting} \times \text{Level}})
+
+The amount of Essence gained from the level-less item (LaTeX format):
+\text{Essence} = \text{floor}(\text{Rarity}^2 + \sqrt{100 + \text{Crafting} \times \text{Rarity}})
+
+While this may not seem like much of an advantage, there are two other factors to consider.
+
+First, the higher the level of the item, the greater the effect. The level 100 item E will gain 30 Essence with Crafting 0, while the same item with Crafting 100 will gain 120 Essence, which is four times more, compared to three times the difference for the level 10 item.
+
+Second, and more importantly, with more points in the Crafting attribute, not only does the amount of Essence gained from scrapping increase, but the amount of Essence needed to upgrade or evolve decreases at the same time.
+
+
+Upgrading
+Users can upgrade their items up to their own level, so if Alice is level 50, she can also upgrade her clothes up to level 50. As a result, when users level up, they need to upgrade all of their items, except for higher level items purchased from the market or received from loot boxes, in order to have maximum performance.
+
+In Questfall v.1, only clothing has levels that can be increased, but in future versions, new types of items will appear that have levels, such as Warriors.
+
+Items can only be upgraded with Essence, the only source of which is the item scrap. This creates a constant demand for low level or weak items. The amount of Essence required to upgrade a particular item is determined by the current and target levels, the rarity, and the Crafting attribute.
+
+The amount of Essence required to upgrade an item to the next level (LaTeX format):
+\text{Essence}_{k \to k+1} = \text{ceil} \left( Rarity \times Level_k^2 \times \left( Crafting \times Level_k + 100 \right)^{-0.5} \right)
+
+In general, the higher the Crafting attribute, the greater the difference between the Essence gained from scrapping and the Essence needed to upgrade low level items. Therefore, the Crafting attribute is crucial for leveling a lot of items with a limited number of items to scrap, as it significantly increases the efficiency of the Essence usage.
+
+
+Evolving
+In Questfall, there are two main ways to increase the rarity of an item, depending on its type. If items do not have levels, they can only be evolved by merging several equal items. If items have levels and can be upgraded, they can only be evolved by consuming Gems.
+
+In Questfall v.1, clothing can only be evolved using Gems, while potions can be evolved by merging two identical bottles.
+
+While evolving by merging only requires common RPG items that can be obtained from loot boxes, evolving an item with levels would require a Gem.
+
+Initially, Gems can only be obtained by participating in the Liquidity Program, where each Crafting point increases the chances of obtaining more rare Gems.
+
+To evolve, a user needs a Gem of the same rarity as the item to be evolved. For example, to evolve boots from rarity F to rarity E, a user would need a Gem of rarity F. In this way, users can buy items and Gems of the same rarity on the marketplace with Gold, evolve them, and when an item reaches rarity C, it can be sold for QFT.
+
+In both cases, a user will need Essence to evolve an item, either by merging or by using a Gem. However, the amount of Essence required is calculated differently.
+
+The amount of Essences needed for merging depends on the rarity of the item, while for evolving with a Gem it depends on the current level of the item. Obviously, the Crafting attribute reduces the amount of Essence required to evolve an item in both cases.
+
+The Essence required for merging (LaTeX format): 
+\text{Essence}_{r \to r+1} = 5 \times Rarity_{r+1} \times (Rarity_{r+1} - 1) \times (Crafting + 1)^{-0.5}
+
+The Essence required to evolve with a Gem (LaTeX format):
+\text{Essence}_{r \to r+1} = 5 \times \text{Level} \times (\text{Level} - 1) \times (\text{Crafting} + 1)^{-0.5}
+
+
+Trading
+The Trading attribute gives an advantage to users who have chosen a trading strategy that involves buying and selling RPG items on the marketplace for gaining Gold or QFT.
+As a result, this attribute gives bonuses not only for trading itself, but also for withdrawing Gold on the system's weekly auction.
+
+Marketplace Slots
+Since the marketplace can be used to overcome the inventory weight limit by listing RPG items on the marketplace at very high prices that no one is willing to pay, there is a limit to how many items a user can list for sale on the marketplace.
+
+A first level character starts with 1 marketplace slot, and each additional point in the Trading attribute grants a new slot.
+
+The number of available slots is calculated using the following formula:
+Slots=Trading+1
+
+Marketplace Fee
+The marketplace charges a 10% trading fee, which is burned. However, the percentage of the fee can be reduced by investing stat points in the Trading attribute.
+
+The fee is calculated at the moment a buyer pays for an RPG item, so a seller cannot predict when it will happen and must keep items that give a reduced fee equipped permanently.
+
+The percentage of a fee is calculated using the following formula: 
+Fee_size = 10/(0.01*Trading+1)
+
+
+Gold Withdrawal
+Gold can be withdrawn for QFT through a weekly system auction based on user bids that include the amount of Gold to be burned and its dollar price. Obviously, the lower the price, the higher in the queue the bid will be.
+
+Because the system has a limited number of QFTs to use in the auction, the entire queue will not be filled. Users can move their bids higher in the queue by increasing the Trading attribute. This is implemented through the concept of effective bids, which are actually used to sort bids in the queue.
+
+By default, for a user with no points in the Trading attribute, the effective bid is equal to the actual Gold price. However, for each point in the Trading attribute, the effective bid decreases, aiming for 80% of the price.
+
+The effective bid is calculated using the following formula (LaTeX format):  
+\text{Bid}_{\text{eff}} = \text{Bid}_{\text{actual}} \times (0.8 + 0.2 \times 0.995^{\text{Trading}})
+
+
+In this way, the Trading attribute allows Gold to be sold to the system for QFT at better prices that would otherwise not pass due to the competitive nature of the auction mechanics.
+
+Recovery
+The Recovery attribute increases the speed of the recovery rate for resources that replenish over time, and while in Questfall v.1 it will only apply to the recovery rate of stamina, in future versions it may apply to more resources, such as mana.
+
+Stamina Recovery Rate
+The larger the Stamina Reserve, the slower it will regenerate, as the amount of stamina replenished in a minute is absolute and does not depend on the size of the Reserve.
+
+A first level character recovers 0.2 stamina per minute, and each additional point in the Recovery attribute increases the amount of stamina restored per minute by another 0.2. For example, with a Recovery of 20, a character will regenerate 4.2 stamina per minute.
+
+The recovery rate of Stamina Reserve is calculated using the following formula:
+Stamina_min = 0.2*(Recovery + 1)
+
+Of course, as in most other RPGs, stamina can be instantly restored at any time with the Stamina Potion, which can be obtained from the loot box or purchased with Gold from other users in the marketplace.
+
+
+Luck
+The Luck attribute increases the number of loot boxes a user receives for free, increases the amount of items gained from each loot box, and also increases the chances of getting various bonuses.
+
+Missing Chest Shards
+Users earn Chest Shards for each quest they complete, and a free loot box is awarded every time they collect a full set of shards. The Luck attribute increases the chance of obtaining the missing shard needed to complete the set.
+
+Initially, a first-level character receives a random Chest Shard from an imaginary urn, where there is 32 units of each missing shard and 61 units of each collected shard. As a result, the odds of getting a particular collected shard are almost 2 times greater than the odds of getting a particular missing shard.
+
+However, for each point of Luck, the number of units of missing shards increases by 2, while the number of units of collected shards increases by 1. As a result, the chance of getting a particular missing shard relative to the chance of getting a particular collected shard increases from 1:2 to 2:1 with each additional point of Luck.
+
+For example, if there is a set of 5 shards: A,B,C,D,E, and a user already has shards of different amounts of A, B, and C, then with a Luck of 10 the next shard will be randomly selected from the imaginary urn containing Ax70, Bx70, Cx70, Dx50, Ex50. With a Luck of 50, the imaginary urn will contain Ax110, Bx110, Cx110, Dx130, Ex130.
+
+This method of counting chances does not take into account the different number of collected and missing shards. Even if the chance of getting the single missing shard is maximum and almost 2 times higher than the chance of getting any of the 9 collected shards, it is still more likely to get one of the collected shards (9 chances out of 11) than the missing shard (2 chances out of 11).
+
+Loot Box Turns
+By default, a loot box provides one turn, with the chance of receiving an item depending on its rarity. However, users can increase their chances of receiving more items by investing stat points in their Luck attribute and increasing the number of turns they take when opening loot boxes.
+
+To get a second turn, a user must reach 10 Luck. For each subsequent turn, the Luck requirement increases by 5. Thus, for the third turn, Luck should be 25, for the fourth, 45, and so on.
+
+The Luck attribute determines the number of turns. Formula in LaTeX format for the number of turns for a given luck:
+\text{Turns} = \text{floor}\left(\frac{-1 + \sqrt{9 + \frac{8}{5} \times \text{Luck}}}{2}\right)
+
+This way, the Luck attribute does not directly affect the chance of getting rarer items, it just increases the chance of getting more items from a single loot box. And that actually makes it more likely to get a rarer item because there is more room for chance to work.
+
+As a result, the maximum number of items a user can potentially receive from a single loot box is equal to the number of turns allowed by their Luck attribute. However, the actual number of items received will depend on the user's choices during the opening process or the user's actual fortune.
+
+Bonus Chances
+Many activities in Questfall offer a chance to receive bonuses or reduce costs, such as:
+    • Earning 2x Essence when scrapping an item;
+    • Receiving 2 Chest Shards as a quest reward;
+    • Earning 2x Mining Points as a quest reward;
+    • Spending only half the Essence to level up or evolve an item;
+    • Using only half the stamina for a quest;
+    • And many more...
+
+Initially, the chance to win a bonus is 11 in 1010. Each point of Luck increases the chance of winning by 1 and the chance of losing by 10. Although it seems contradictory, in fact, with each point of Luck the probability of getting a bonus will increase from initial ~1% to unattainable maximum of 10%.
+
+For example, if Luck is 10 the chances of getting the bonus will be 20/1100=1.8%, while with Luck 50 the chance will raise to: 60/1500=4%.
+
+
+
+RPG Items
+There are several types of RPG items in Questfall, and each of them plays an important role in the user's overall performance, depending on the strategy chosen.
+
+Although there are only three types of RPG items in Questfall v.1, there will be more in future releases. For example, Elixirs, Spellbooks, Mana Potions and Warriors are already scheduled to be implemented.
+RPG Items:
+    • Clothing enhances every aspect of a character, from mining power to marketplace fees.
+    • Potions allow users to instantly restore resources that are replenished over time, such as stamina.
+    • Gems allow users to increase the rarity of other RPG items that have levels, such as Clothing.
+
+Every RPG item in Questfall has a rarity - the rarer the item, the more powerful it is. In addition to rarity, some types of items are levelable, or have levels that can be upgraded. While level-less items (Potions, Gems) are consumed when used, levelable items (Clothing) can be used and then sold for use by someone else.
+
+All items except Gems are initially issued from loot boxes, which can be obtained for free by completing quests or purchased with Gold. And until the item is used, it adds a certain amount of weight to the user's inventory, depending on its level (if applicable), rarity tier, and individual density factor.
+
+The weight of levelable items is calculated using the following formula (LaTeX format):
+\text{Weight} = 100 \times \text{Rarity}^2 \times \sqrt{\text{Level}} \times \text{Density}
+
+For level-less items, the weight is calculated using the following formula (LaTeX format):
+\text{Weight} = 100 \times \text{Rarity}^3 \times \text{Density}
+
+Item Rarity
+Every RPG item in Questfall falls into one of six rarity tiers. The rarity of an item literally means how rare it is, so the rarer the item, the lower the chance of getting it from loot boxes. And since rarer items tend to be more powerful, they should also be more expensive on the marketplace.
+
+In general, each subsequent tier is ten times less likely to be found in a loot box. However, some types of RPG items, such as Potions, may have a different drop rate, and some types, such as Gems, are not available in loot boxes at all and have their own distribution system.
+
+Rarity|In Formulas|Drop Rate
+Common (F)|1|9/10
+Uncommon (E)|2|9/100
+Rare (D)|3|9/1000
+Epic (C)|4|9/10000
+Legendary (B)|5|9/100000
+Mythical (A)|6|9/1000000
+
+Unlike many common RPG systems, Questfall allows users to evolve the rarity tier of items. Items without levels (Potions, Gems) can only be evolved by merging multiple identical items. Items with levels (Clothing), on the other hand, can only be evolved by consuming Gems.
+
+In future versions, several new types of RPG items will be implemented, but these two evolution principles will remain the same.
+
+Low rarity items (F,E,D) are traded on the marketplace for Gold and could not be taken out of the system as NFT. In contrast, higher rarity items (C,B,A) are traded for QFT and can be transferred to the chain as NFT. This approach allows users who focus on crafting and trading strategies to extract value from the system apart from mining.
+
+Item Level
+Users can upgrade RPG items that have levels up to their own level. This way, as users progress through levels, they can upgrade the items they use to make them more powerful.
+
+With each level, however, an item becomes not only more powerful, but also heavier, 
+draining more stamina if equipped or consuming the inventory weight limit if not.
+
+In Questfall v.1, only Clothing has levels, but more levelable items, such as Warriors, will be added later.
+
+In most RPGs, a user's level is a threshold that prevents them from equipping or using items of a higher level than their character. In Questfall, this is not the case, as users can use items regardless of their level.
+
+For example, users can equip clothing above their own level that they have obtained from loot boxes or the marketplace. However, the power of the item will be reduced in proportion to the level gap.
+
+The core idea behind the levels in Questfall is not to create a barrier, but rather to create a constant demand for low-level items, which is achieved through Essence. This is a non-tradable resource that can only be obtained by scrapping other RPG items, and is required for item upgrades or evolution.
+
+For more information, see the Crafting attribute article.
+
+In addition to Essence, rarity also plays an important role in the leveling of items, as it determines how much the item will increase in power with each subsequent level. This is better explained with an example.
+
+Let's say there is an item that gives +1% to an effect for rarity F and +2% for rarity E. So item F at level 10 gives +10%. When the item is evolved to the next rarity E, the bonus increases to +2% per level, but it will only apply to the next level upgrades.
+
+In other words, an increase in the level of an item fixes its power. So the bonus for the first 10 levels when the item was of rarity F is set in stone forever. If the item is evolved to rarity E at level 10 and further evolved to level 11, its bonus will be +12% (10% + 2%), not +22%.
+
+In this way, identical high-level items can have very different power depending on the level at which their rarity was evolved. Therefore, users can either ruin items by evolving them late, or they can craft a perfect item by evolving its rarity while it is still at the first level.
+
+
+Clothing
+Clothing is the core element of user performance, as a naked character will be much weaker than the same character dressed in appropriate, matching clothing.
+
+Like all other items except Gems, clothing is initially created from loot boxes. It has a 90% drop rate, meaning that on average, 9 out of 10 items from loot boxes are clothing.
+
+The drop rate for clothing will decrease as new item types are introduced in future versions of the platform.
+
+As with all RPG items in Questfall, each clothing item falls into one of the six rarity tiers, and can be scrapped for Essence or sold on the marketplace for Gold (F,E,D) or QFT (C,B,A).
+
+However, there are many properties that make clothing special. And one of the most important is that clothing items can grow in power along with a character, as they have levels that can be upgraded.
+
+Since clothing has levels, its rarity tier can only be evolved with Gems, not by merging.
+
+Users can level clothing items up to their own level. For example, a level 30 user can level up an item from 1 level to 30. In addition to crafting, users can also obtain high-level items from the marketplace or loot boxes.
+
+The highest possible level of an item available in loot boxes is the level of the top user in the system. Of course, the higher the level of the item, the lower the chance of getting it.
+
+Unlike level-less items, clothing is not consumed when applied to a character. Instead, it is equipped, meaning that an item can be put on and taken off an unlimited number of times.
+
+However, to prevent situational clothing switching, each time an item is equipped, it will cost Essence, depending on the rarity of the item.
+
+The amount of Essence required to equip the item: 
+Cost_essence=10*Rarity
+
+When the item is equipped, its effects are applied to the character. And there are two types of effects that an item can have.
+
+First, each item has an aspect that adds to one of the character attributes. 
+Second, depending on its rarity, the item can have up to 5 perks.
+
+To equip clothing, there are no rarity or level restrictions. This means that a user can equip items purchased on the marketplace or obtained from a loot box that are of a higher level than the user. For example, a level 5 user can wear level 40 boots.
+
+However, the power of the item's aspect is reduced proportionally, while the weight is applied in full. Since the weight of equipped items contributes to stamina consumption, this can be a significant limitation depending on overall character development.
+
+The power of the aspect is reduced by the formula (LaTeX format):
+\text{Aspect}_{\text{user}} = \min \left( 1, \frac{\text{Level}_{\text{user}}}{\text{Level}_{\text{item}}} \right) \times \text{Aspect}_{\text{item}}
+
+
+The only restriction on equipping clothing is introduced by another important attribute, the type. It determines which of the character's six clothing slots the item can be equipped in.
+
+While all types of clothing have the same drop rate and are generally considered equal except for the slot they occupy, some types are heavier on average but may offer more powerful perks.
+
+Since the actual weight and each perk effect is determined individually on a random basis, not only will the average power vary from type to type, but some items may be more powerful relative to their weight than other items of the same type.
+
+Slot|Items|Weight Factor
+Head|helmets, hoods, hats, crowns, masks|200%-400%
+Torso|robes, tunics, shirts, vests, breastplates|400%-600%
+Legs|pants, trousers, leggings, chaps|200%-400%
+Feet|boots, shoes, sandals, sabatons|500%-700%
+Hands|gloves, gauntlets, bracers, mittens|100%-300%
+Cloak|capes, raincoats, mantles, shawls|300%-500%
+
+The base density of the clothing is Rarity^-1.1, and the final weight is adjusted by the individual random weight factor.
+
+
+Aspects
+Each clothing item has an aspect that increases the power of one of the character attributes. As such, the number of aspects and their names are the same as the attributes: Inventory, Mining, Crafting, Trading, Recovery, and Luck.
+
+Despite the fact that the number of clothing slots and attributes are the same, each item's aspect is independent of its type and is randomly determined when the item is created.
+
+For example, boots can have a Trading aspect, a Luck aspect, or any other aspect, since there is an equal chance of getting each of the aspects on a new item.
+
+This way, a user can equip all of the same aspect clothing to increase only one character's attribute.
+
+What makes clothing so powerful is that the effect of an aspect increases not only with each rarity tier, but also with each new item level. More specifically, the rarity determines the possible range of aspect power, while the actual power is determined individually on a random basis.
+
+Rarity|aspect Min Power|aspect Max Power
+F|0.15|0.25
+E|0.30|0.40
+D|0.45|0.55
+C|0.60|0.70
+B|0.75|0.85
+A|0.90|1.10
+
+To illustrate how this works in practice, let's look at an example. Suppose a user receives first level boots of rarity F with a Crafting aspect of power 0.2. When these boots are upgraded to level 10, they give +2 to Crafting (0.2 per level).
+
+As the boots evolve to the next level, the power of the aspect will increase. However, there are two factors to keep in mind when evolving an item.
+
+First, the range of the aspect's power narrows. So the new aspect power of the boots could be anywhere between 0.3 and 0.35, since the original power was in the middle of the range. Suppose the new aspect power for rarity E was randomly set to 0.32. When evolving to rarity D, the range will narrow again, this time to 0.45-0.47. And so on.
+
+As a result, it is very difficult to craft item A with the maximum power of the effect. However, it can be maximized to 1.5 at any time with the Gem A.
+Second, the new aspect power is only applied when upgrading to the next level. So if a user from the example above upgrades boots to level 11 with a new aspect power of 0.32, boots will give +2.32 to Crafting. In other words, the power of aspect is not retroactive.
+
+
+Perks
+Perks are fixed effects that an item gains with each rarity level, so a rarity F item has no perks, while a rarity A item has 5 perks. The power of perks does not increase with item level and remains the same.
+
+There is a predefined list of possible perks in the system, each with a base power. When a clothing rarity is evolved, one of the perks is randomly selected from this list. The perk's power is also randomly generated from the range specific to each clothing type.
+
+There is no way to know what future perks the item will have at higher rarity tiers.
+
+Slot|Perks Min Power [%]|Perks Max Power [%]
+Head|120|140
+Torso|140|160
+Legs|120|140
+Feet|150|170
+Hands|100|130
+Cloak|130|150
+
+The heavier the average item of the type, the greater the average power of its perks. For example, the average power of a perk on a hand item is 110%, while the average power of the same perk on a torso item is 150%.
+
+Let's say the perk "Increase Stamina Recovery Rate" has a base power of 10 stamina per minute. If the user evolves the hat and gets this perk with a power of 125%, the actual effect of the perk will be 12.5 stamina per minute.
+
+While the perks of the item are fixed from the moment they appear and there is no way to change them, users can use Gems A to maximize the power of the perks to 200%. For example, if the perk from the example above is maximized, it will result in 20 stamina per minute.
+
+The main idea behind perks is to give items individual value to different users. While an item may seem worthless to Alice, it may be very valuable to Bob.
+
+In order to best accomplish this goal, perks not only improve the parameters of a character in a more granular way than attributes, but more importantly, perks can also increase the power of other perks or aspects.
+
+This allows users to collect individual sets of clothing items that enhance each other. For example, one of the perks on the pants might be "Increase the power of the 2nd perk in the hand slot", while the gloves might have a 2nd perk "Increase the aspect of the head slot". In the ultimate case, items can gather power through a spiral with multiple coils.
+As a result, the same item may perfectly match other items for one user and not add much power for another. This increases marketplace activity by orders of magnitude and makes opening loot boxes and crafting much more fun.
+
+
+Potions
+Potions are designed to instantly restore resources that would otherwise take time to replenish, such as stamina. They are only dropped from loot boxes and have about a 10% chance of being found, meaning that on average, one out of every ten loot box items is a potion.
+
+In Questfall v.1, only one type of potion is introduced - the Stamina Potion. However, new potion types will be implemented in future versions. For example, Mana Potions.
+
+Potions do not have levels, but they can be one of six rarity tiers, gaining power with each tier. Therefore, potions of the same type and rarity are identical and have exactly the same properties, such as effect, weight, evolution cost, etc.
+
+Like any other RPG item, potions can be scrapped for Essence or sold on the marketplace for Gold (F,E,D) or QFT (C,B,A). Users can also evolve the rarity of potions by merging identical bottles, the number of which depends on the type of potion.
+
+For example, Stamina Potions assume that two potions are merged to evolve. Therefore, two F-rarity potions will create an E-rarity potion, two E-rarity potions will create a D-rarity potion, and so on.
+
+Stamina Potion
+When consumed, a Stamina Potion will restore a percentage of the user's Stamina Reserve, depending on the rarity of the potion. The Stamina Potion of rarity F restores 10% of the total size of the Stamina Reserve, and each subsequent rarity tier doubles the effect.
+
+Since evolving requires two potions that have the same resultant effect, it might seem that there is no point in evolving. However, the weight increases more slowly, so an E potion, for example, has the same effect as two F potions, but takes up less inventory space.
+
+Rarity|Effect|Weight [g]|Drop Rate|Scrapping|Evolving
+F|10.00%|100|32/630|11es|-
+E|20.00%|174|16/630|14es|2xF+10es
+D|40.00%|241|8/630|19es|2xE+30es
+C|80.00%|303|4/630|26es|2xD+60es
+B|160.00%|362|2/630|35es|2xC+100es
+A|320.00%|419|1/630|46es|2xB+150es
+
+Scrapping and evolving values in the table are calculated for a Crafting attribute of 0, where 11es means 11 Essence. Drop rate assumes no other type of potion is present. Weight is calculated based on:
+Density=Rarity^-2.2
+
+The potion adds the full amount provided by the effect to the reserve, which can hold more than its nominal size. For example, if a user has a reserve size of 10,000 and only has 4,000 stamina left, a C-rarity potion will add 8,000 (80%). This will result in 12,000 stamina in the reserve.
+
+However, to prevent automation by gaining a huge amount of stamina before running a bot, a potion cannot be consumed in advance if the reserve is full.
+
+
+Gems
+Level-less items, such as potions, of the same type and rarity are identical, so their evolution can be implemented as a simple merging. However, items with levels, such as clothing, are quite unique, and it is almost impossible to find two similar items.
+
+To evolve such items, users need Gems, which are only issued as a reward for participating in the Liquidity Program, so they cannot be found in loot boxes. In that sense, Gems are special.
+
+In all other respects, Gems are just like any other level-less items, such as potions. They can be scrapped, sold on the on the marketplace for Gold (F,E,D) or QFT (C,B,A), their rarity can be evolved through merging, and they take up inventory space.
+
+Rarity|Weight [g]|Scrapping|Evolving
+F|100|11es|-
+E|373|14es|4xF+10es
+D|806|19es|4xE+30es
+C|1393|26es|4xD+60es
+B|2128|35es|4xC+100es
+A|3009|46es|4xB+150es
+
+Scrapping and evolving values in the table are calculated for a Crafting attribute of 0, where 11es means 11 Essence. Weight is calculated based on:
+Density=Rarity^-1.1
+
+To evolve a rarity of an item, a user needs a Gem of the same rarity tier. For example, to evolve an item's rarity from F to E, a Gem F is required. To evolve item's rarity from E to D, a Gem E is needed. And so on.
+
+In addition to Gems, Essence is also required to evolve the rarity tier.
+
+A-rarity Gems are not used for evolving, as rarity tier A is the highest possible tier. Instead, a user can use them to maximize the aspect or one of the perks of the clothing item.
+
+Since users only need Essence and Gems of the same rarity, they only need Gold to craft C-rarity items that can be sold for QFT, thus extracting in-game value from the system to the blockchain. In fact, because Gems themselves can be evolved through merging, items of any rarity can be crafted using only Gold.
+
+
+Gem Issuance
+Although Gems can be purchased on the marketplace, they are initially created as a reward for participating in the Liquidity Program. In this program, users provide liquidity to the official swapping pool and then burn the LP tokens they receive. In return, they receive QFT and Gems.
+
+While QFTs are awarded proportionally based on users' mining results, Gems are indivisible items that are distributed based on a leaderboard mechanic that prevents manipulation by multiple accounts.
+
+Learn more about QFT distribution in the Liquidity Program article.
+
+Every user who participates in the Liquidity Program during a week earns Gem Points, which are used to create the leaderboard. The amount of Gem Points earned depends on three factors: the amount of LP tokens burned for the program, the value of the Crafting attribute, and how early in the week the LP tokens were burned.
+
+The amount of Gem Points earned per LP token burned (LaTeX format):
+GP_{points} = LP \times \sqrt{\text{Crafting} + 1} \times \left(1 + e^{2 \times 10^{-5} \times (\text{Second} - 3 \times 10^{5})}\right)^{-1}
+
+
+In this way, a user with higher Crafting who burns liquidity at the beginning of a new week will receive more points than a user who burns the same amount of LP tokens in the middle of the week, or who has a lower Crafting attribute.
+
+The time factor discourages last-minute tampering, making it much more costly, especially for newly created accounts with a Crafting of 0. This allows users who really earn from crafting to get Gems without any hassle.
+
+
+The leaderboard is based on the Gem Points earned by users during the week. To prevent Sybil attacks, the leaderboard is divided into a top and bottom section based on the average amount of Gem Points earned by the top ten users. And the bottom section of the leaderboard is not eligible for Gem rewards.
+
+The division value for the leaderboard is calculated as follows (LaTeX format):
+\text{Division} = \left( \sum_{u=10}^{1} 0.1 \times \text{GPoints}_u \right)^{0.5}
+
+
+
+The top section of the leaderboard is divided into 21 equal slices, grouped into 6 segments, and depending on which segment the user reaches, they will receive a Gem of particular rarity.
+
+For example, let's say the lowest ranked user in the rewards section of the leaderboard has 1,000 Gem Points, while the highest ranked user has 22,000 Gem Points. This way the rewards section of the leaderboard will be divided by (22000-1000)/21=1000 Gem
+
+Segment|Start|End|Gem
+6 parts|1,000|7,000|F
+5 parts|7,000|12,000|E
+4 parts|12,000|16,000|D
+3 parts|16,000|19,000|C
+2 parts|19,000|21,000|B
+1 parts|21,000|22,000|A
+
+For example, if Alice earns 12500 Gem Points in a week, she will receive Gem D, while Bob with 19100 Gem Points will receive Gem B.
+
+This approach to Gem distribution has many advantages:
+    • It scales, so as Questfall becomes more popular, more Gems are issued to meet the growing demand.
+    • It prevents Sybil attacks by not rewarding relatively small amounts of burned liquidity.
+    • It forces competition among users, which results in more liquidity being added.
+    • It increases the value of the Crafting attribute.
+    • It prevents last-minute tampering.
+
+
+
+Levels
+In Questfall, level is a key characteristic of users who complete quests, which heavily influences many aspects of the quest mining:
+    • Level determines which league a user belongs to, allowing a higher level user to mine rewards with less competition.
+    • Each level grants one attribute point, which can be used to improve any of a character's attributes.
+    • The level of clothing items is limited by the user's level, so progressing through the levels allows for clothing upgrades.
+    • Level increases the weight of a user's vote in community moderation decisions and quest ratings.
+
+When a user advances to the next level, resources that can be replenished with potions, such as stamina, are fully restored.
+
+While in most RPGs it is common to earn XP for leveling up directly, in Questfall there is an intermediate asset - Silver - which allows to buy XP. This is because community moderation, which is rewarded with Silver, can be used not only by users who complete quests, but also by indie authors who want to promote their quests and be rewarded for doing so.
+
+As a result, the model is a bit more complex than in most RPG systems, as there are two ways to get Silver (burning Gold or community moderation) and two ways to spend it (either paying for XP or paying for Quest Bounties).
+When miners buy XP or authors pay for Quest Bounties, the Silver is burned.
+
+Leveling Up
+Newly registered users start at level 1, and to advance to higher levels, they must gain XP by burning Silver. Each level requires more XP than the previous one, specifically, to get to level 2, a user would need 1000 XP, and with each subsequent level, the amount of XP required would increase by 1000 XP.
+
+The amount of XP required to advance to the next level can be calculated using the following formula:
+XPlevel=1000*(Level - 1)
+
+Since each level requires more XP than the previous one, the total XP required to reach higher levels from the first level increases exponentially.
+
+To calculate the total amount of XP needed to reach a given level from level 1, the following formula can be used:
+XP_total = 1000 * (Level^2-Level)/2
+
+
+Purchasing XP
+Although the increasing amount of XP needed to reach each next level is common to all RPG systems, this approach motivates users to level up multiple accounts at once if possible. In other words, the diminishing return on invested XP provokes Sybil attacks.
+
+In Questfall, to prevent such a threat, XP can only be obtained with Silver, and the price decreases for each XP purchased during a week.
+
+The protection is based on a simple mathematical inequality:
+(a+b)^p >a^p +b^p, if p>1
+
+The decrease in the XP price means that the more XP a user buys in a week, the lower the average price will be. This also motivates users to burn as much Silver as possible over the course of a week.
+
+Users can pay for XP not only in Silver, but also in Gold or QFT, but under the hood, QFT is converted to Gold, while Gold is converted to Silver to be burned immediately for XP.
+
+For example, the first 1000 Silver will return 200 XP, another 1000 Silver during the week will return an additional 228 XP, another 1000 Silver will return 240 XP, and so on. At the beginning of a new week, the XP price will be reset and the user will start again with 200 XP for 1000 Silver.
+
+The amount of XP that can be purchased for a given amount of Silver during a week can be calculated using the following formula:
+%%PYTHON_EXECUTE_BLOCK_START%%
+import math
+def calculate_XP(Silver_week):
+  XP = 0.1 * Silver_week**(11/10)
+  return XP
+calculate_XP(Silver_week)
+%%PYTHON_EXECUTE_BLOCK_END%%
+
+
+Silver|USD [$]|XP|XP per Silver
+100|0.1|15.85|0.16
+1000|1|199.53|0.20
+10000|10|2,511.89|0.25
+100000|100|31,622.78|0.32
+1000000|1000|398,107.17|0.40
+10000000|10000|5,011,872.34|0.50
+
+
+As a result, not only does spreading resources across accounts become a losing strategy, but users are also motivated to spend as much Silver as possible to level up. For example, one of the winning strategies will be to accumulate Silver and then spend it all at once.
+
+Spending $1000 on a new account will get the user to level 28, while splitting it in half between two different accounts will get them both to level 19. This will put a single user in League II, while two accounts will end up in League I.
+
+
+Leagues
+In Questfall, the weekly rewards for miners are segmented based on user progression. However, if such segmentation were based on levels, then when a top user reached a new highest level in the system, everyone would start earning less because the reward pool would be split into more parts.
+
+Since progress through the levels will be quite fast (at least in the beginning), the rewards for existing segments would also decrease rapidly. To slow down the process of segmentation, Questfall introduces the concept of leagues, in which users of levels within a certain range are grouped together.
+
+To protect the system from Sybil attacks, the range of 1-4 levels forms the Hall, which is not a league and therefore does not have weekly rewards. The first league starts at level 5 and ends at level 14, containing a range of 10 levels, and each subsequent league contains an additional 5 levels.
+
+Name|Start Level|End Level|Range Size
+Hall|1|4|4
+League I|5|14|10
+League II|15|29|15
+League III|30|49|20
+League IV|50|74|25
+League V|75|104|30
+League VI|105|139|35
+League VII|140|179|40
+League VIII|180|224|45
+League IX|225|274|50
+League X|275|329|55
+…
+
+
+Since there is no cap on user level, the number of leagues in the system can theoretically be infinite.
+
+Leagues not only drastically slow down the appearance of new segments, but also add an internal dynamic. The higher the league, the greater the level difference between users at the bottom of the league and those at the top.
+
+While attribute points lose value with each new point due to the growing base, even small advantages become valuable again as the range size increases with leagues. This applies not only to attribute points, but also to all other RPG items.
+
+As a result, users are motivated to move up in the league as well as to move up to the next league. Even though they will be at the bottom of the new league, the overall competition will decrease.
+
+Joining a new league also allows a user to reset attribute points once for free.
+
+
+Rewards
+There is no way to protect quest completion from multiple accounts and bots. For example, a user could register several accounts and use a bot to clone the completion of a quest with a common answer on all of them.
+
+In Questfall, to protect legitimate miners from such abuse and to keep mining fair, the total weekly reward pool, made up of 40% of the weekly QFT issue, is divided equally among the leagues that had at least one active miner during the week.
+
+An additional 11.2% of weekly QFT issue is used for seasonal rewards. Overall, more than half (51.2%) of QFT issuance is used to reward quest completion.
+
+For example, let's say 25,000 QFTs are issued at the end of the week and there are 5 active leagues in the system. In this case, the total reward pool for miners will be 10,000 QFTs and each of the leagues will receive 2,000 QFTs to reward users based on their share of the league's total Mining Score.
+
+The league's Mining Score is the sum of its members' scores (LaTeX format):
+MiningScoreleague=?MiningScoreuser i
+\text{MiningScore}_{\text{league}} = \sum \text{MiningScore}_{\text{user } l}
+
+The user's Mining Score is the total number of Mining Points (LaTeX format):
+\text{MiningScore}_{\text{use}} = \sum \text{MiningPoints}_{\text{quest i}}
+
+League|Reward Pool
+League I|2,000 QFT
+League II|2,000 QFT
+League III|2,000 QFT
+League IV|2,000 QFT
+League V|2,000 QFT
+
+Let's say Alice is a member of League III and her individual Mining Score is 5,000 while the league's total Mining Score is 50,000. In this case, Alice will receive one-tenth of the reward pool, or 200 QFT.
+
+The user reward is calculated according to the following formula:
+QFT_user  = (0.4*QFT_week/Leagues) * (MiningScore_user / MiningScore_league)
+
+
+As a result, this approach to rewarding users for completing quests, while allowing them to try to cheat the system with multiple accounts, is a losing strategy because there are two factors that determine the final reward: the league and the Mining Score.
+And while gaining Mining Score can be automated, level and league progression cannot.
+Therefore, malicious actors will not be able to get through the Hall to Leagues for free - they will have to spend either money or effort. This provides a solid defense against Sybil attacks and makes the rewards in Questfall as fair as possible.
+
+
+Community Moderation
+As noted in the Sybil Defense article, computers cannot properly judge quest completions because:
+    • completions can be any kind of content,
+    • completions must implement unpredictable quest requirements,
+    • completions must meet minimum quality criteria that are entirely a matter of human perception,
+    • completions can be published on any available platform on the Internet, most of which fight against automated access to prevent DDoS attacks and content scraping.
+
+In addition to judging content, computers are very bad at risk assessment, especially when it comes to the outside world, since risk assessment in many cases is heavily based on social reputation.
+
+For example, what are the chances that Youtube will drain your crypto wallet? To the computer, however, youtube.com is just another website because it can't take into account its social reputation or your personal experience.
+
+For this reason, Questfall relies entirely on the help of its users to solve such problems, which is implemented in the form of community consensus through voting, or in other words, community moderation. It protects Questfall users from scams and helps to distribute fair rewards to miners according to their efforts, by censoring three types of entities:
+    • Domains
+    • Quests
+    • Completions
+
+In addition, community moderation is the cornerstone of the defense against Sybil attacks used to secure mining. Therefore, the voting itself must be protected from any kind of manipulation, multi-accounts, bots, and blind/random voting. And it is.
+
+The main principle of securing the community moderation voting is that moderators are rewarded or penalized with Silver, depending on how their vote matches the final consensus. Aside from directly burning Gold or QFT, community moderation is the only way to earn Silver by adding value to the entire community through voting in line with the majority.
+
+This will force moderators to vote from the majority's point of view, rather than their own personal perspective. For example, you may not personally like a movie, but you think that the majority will like it. How would you vote?
+
+The incentives are balanced so that, on average, the penalties of random or blind voting outweigh the rewards, making it a losing strategy. The system also generates honeypots to balance the odds of encountering good or bad voting outcomes.
+
+There are other safeguards, such as balancing bypass costs with rewards, and splitting completion moderation into two phases to protect community moderation from any possible abuse.
+
+
+Overdraft
+While moderators can both earn and lose Silver by voting in community moderation, punishing them creates a problem.
+
+Moderation should be open and free for good moderators because they add value to the community through their work. But a new amateur moderator will have zero Silver and can make a mistake that will result in a penalty on the very first try.
+
+In order to apply this penalty and allow such an unfortunate moderator to continue, Questfall implements a Silver overdraft - the Silver balance can go negative. This way, new users can practice their moderation skills, go negative, and then earn their Silver back by voting correctly.
+
+Giving new accounts a starting amount of Silver instead of an overdraft approach is a bad idea because users can spend this initial amount of Silver on leveling or Quests Bounty and will not be able to moderate.
+
+The ability to have an unlimited negative Silver balance assumes that users can vote badly endlessly. They will not earn anything that way, on the contrary, they will completely drown their Silver balance, making an account a waste.
+
+But it is still a threat. An attacker can train AI this way, or just add entropy and load to the system. Therefore, in order to limit bad moderators, there is a threshold of -1,000 Silver for participation in community moderation.
+
+This will force users who have received many moderation penalties, or a few large ones for other actions, to either buy Silver with Gold and QFT, or create a new account, as they will not be able to earn Silver through moderation if their balance goes below -1,000 Silver.
+
+Although there is no limit to the amount of negative Silver a user can have, in practice it is limited because only moderation and quest completion have overdrafts, and all other actions that can lose Silver require a positive balance. So a user can't perform actions that are infinitely penalized.
+
+
+Consensus
+In community moderation, each vote has only two possible options - moderators can either agree or disagree with the submission. This binary approach reduces the entire quality spectrum of user submissions, such as quest completions or reports, to the binary result - either valid or not.
+
+The same way hashes are estimated in the Bitcoin blockchain.
+
+Binary choices also make voting easy and straightforward for moderators, and imply a binary validity of their votes, since they either agree or disagree with the consensus result, and are therefore either right or wrong, with no ambiguity.
+
+There are other approaches, such as the range voting that Questfall uses for quest ratings. However, votes in such ratings are only right to a certain degree.
+
+With binary votes, it is fairly easy to calculate the majority. However, the straightforward approach when all votes are equal opens the door to Sybil attacks. The problem is not solved even if the system weights votes by user level. An attacker could still create many low-level accounts and gain the overall weight in the system needed to change the voting results.
+
+In Questfall, to prevent vote manipulation by many low-level accounts, voting is segmented by league and individual league results are generated. Each league result has the same weight, and the final result is determined by a simple majority.
+
+League|Yes|No|Result
+1|156|633|No
+2|142|43|Yes
+3|53|2|Yes
+4|12|4|Yes
+Final|363|682|Yes
+
+In cases where the league results are evenly split, the highest league is given double weight.
+
+This approach protects the results from both sides - many low-level accounts as well as a few high-level accounts will not be able to manipulate the consensus, since an attacker would need a majority in most leagues to abuse a voting system.
+
+This is analogous to the 51% attack in Bitcoin.
+
+Since the votes are quite diverse when segmented by league, the number of votes for a solid consensus can be much smaller than just a percentage of all moderator votes.
+
+For example, the requirement could be at least 11 votes from each of 5 leagues, for a total of 55. This will be sufficient even if there are millions of moderators in the system.
+Of course, these requirements will evolve over time, adjusting to the number of leagues and overall experience, as we are in uncharted territory here. For example, when Questfall launches, user levels will likely be used instead of leagues.
+
+However, to achieve this efficiency, users should not be able to choose the topic they want to vote on - instead, the system should assign moderators from different leagues to voting topics as needed.
+
+This also provides another layer of protection, because when topics are assigned by the system, there is no way for multiple accounts to synchronize an attack on a given vote, since each account is given an unpredictable topic.
+
+Depending on the number of completions and active moderators, it should take anywhere from a few minutes to a few hours to reach a consensus. After that, moderators will be rewarded or penalized based on their vote, according to the voting topic incentives.
+
+
+
+Witnessing
+In many cases, moderators would have to vote on some content outside of Questfall, which often can be edited by the author at any time (e.g. a post on Facebook). And this is a problem.
+
+This applies to all external content, because even if a platform does not currently allow content editing, it can be changed at any time.
+
+A user can submit a completion and then edit it while it is being moderated. As a result, the consensus result should change on the fly. This means that the first moderators who voted on the original content would be punished for doing their job correctly, which is obviously not fair.
+
+This may even happen without malice. For example, there may have been a mistake initially, and a user fixed it later, after moderation had begun.
+
+Penalties, however, are a key part of voting protection and cannot be removed, otherwise any kind of random voting will become a profitable strategy, and community moderation would not be able to play the role of Sybil defense.
+
+To solve this contradiction, Questfall implements the concept of witnessing, which implies that users provide two types of information: a link to the content and a screenshot of that content.
+
+Although we implemented this approach specifically for quest completions, it can be used with any external content.
+
+Moderators would first vote to approve that the screenshot represents the actual content posted on the third-party platform, and then make judgments, such as whether or not the quest was completed, based on the approved, immutable screenshot.
+
+Screenshots will be stored within the Questfall infrastructure to ensure that no one will be able to alter them after they are uploaded.
+
+These two steps, witnessing a screenshot and then judging its content, are actually two separate voting topics, and are voted on by different sets of moderators. But they are still two sides of the same coin, and represent the same issue, meaning that the amount of witnessing and judging in the system will always be equal.
+
+Therefore, if there are many such completions, the system would be able to balance such split topics for each moderator individually over many iterations.
+
+So that out of 100 votings, 50 are witnessing and 50 are judging.
+
+The main advantage of splitting an issue into two voting topics is that the incentives can be split as well - while the reward portion goes to witnessing, the penalty portion remains for judging. And since this approach does not penalize witnessing, users would not be able to punish good moderators by changing content.
+
+In short, witnessing allows moderators to earn, while judging allows them to not lose.
+
+However, witnessing is on average profitable in random voting. Therefore, the average profit from witnessing should be outweighed by the penalties in the judging moderation step and the cost of bypassing. This makes it impossible to earn by randomly voting on these two alternating topics over many iterations.
+
+
+Honeypots
+There may be an imbalance between good completions or reports and bad ones in the system, since the majority of users will not waste their resources and efforts on malicious actions and will play by the rules. And such an imbalance creates a critical threat to the system.
+
+For example, if 90% of all completions and reports in the system are valid and only 10% are not, malicious actors can easily create a bot that blindly approves every assigned completion, and as a result of such voting, the rewards will outweigh the penalties. Such a bot allows an attacker to automatically gain advantage on many accounts at once, which is a typical Sybil attack.
+
+There are two ways to protect the voting mechanics from this kind of abuse.
+
+Either the penalties should outweigh the rewards even with blind approval, which means that in the example above, the penalties should be at least 10 times greater than the rewards, leaving too little room for moderators to make mistakes. Or a system could generate fakes for the moderators to balance the odds.
+
+In Questfall we chose the second approach because it is easy to implement and does not demotivate moderators with high penalties.
+
+However, voting on fakes makes a noticeable part of the moderators' work redundant. But the valuable work will still be greater than 50%, which is much better than hash bruteforcing in PoW, where all 100% of the miners' work is done just for security reasons.
+
+To generate a fake, the system can simply mix data from different completions. For example, it can use a different username for a valid completion, or it can pass off the completion of one quest as the completion of another.
+
+Since the system knows what the correct vote should be, it can punish bad voters and reward good ones independently, without the need for consensus. In other words, such fakes are used as automatically generated honeypots.
+
+Unlike consensus voting, honeypot voting rewards or penalizes immediately after a moderator votes.
+
+
+Bypass
+To make voting more meaningful, moderators should be able to bypass a topic if they are having trouble making a decision. Otherwise, their vote adds no value to the system.
+
+As a result, moderators have at least three options when validating each topic: approve, reject, and bypass.
+
+Quest completions have a fourth action available to moderators - they can report a completion if it is obviously malicious.
+
+However, such a bypass should not be infinitely free, otherwise the idea of a system-assigned topic fails, since users can loop through all topics until they get to the one they want.
+
+In Questfall, the cost of the first bypass is free, while each subsequent bypass costs one Silver more until the maximum cost of -5 Silver is reached. As a result, it is still more profitable to bypass a topic than to vote blindly. After a vote is cast on any voting topic except witnessing, the bypass cost is reset to zero.
+
+Voting Topic|Max Bypass Cost|Reset On Vote
+Completion Validation||
+    • Witnessing||
+    • Judging|-5 Silver|+
+Whitelisting Domain|-5 Silver|+
+Domain Report|-5 Silver|+
+Completion Report|-5 Silver|+
+Quest Report|-5 Silver|+
+
+
+There is another way to bypass a topic for free. All a moderator needs to do is wait for the voting to reach a consensus. When the voting is over, the moderator will be assigned a new topic to vote on.
+
+This is not a threat, because if consensus is reached on this particular topic, all other topics in the system are likely to be voted on as well. So users will not be able to get to any particular topic this way.
+
+The witnessing voting topic is a special case because it has no penalty. This not only means that this type of topic can always be bypassed for free, but also implies that there should be a balance between witnessing and judging topics.
+
+Therefore, to get a witnessing topic, a user should either vote on a judging topic first, or pay at least 25 Silver for bypassing in advance.
+
+
+Incentives
+The core mechanics of Questfall community moderation are based on the idea that rather than securing every possible vote, malicious voting should be a losing strategy over many iterations, so that the most profitable strategy for a moderator in the long run is to play by the rules.
+
+Voting topics are not the same in terms of potential harm to users, so the rewards and penalties for different types of voting are different. In general, however, the penalties outweigh the rewards, making any random or blind voting by bots a losing strategy.
+
+As a result of the incentive mechanism and the overall voting process, in order to earn Silver, moderators must try to predict what the consensus outcome will be.
+
+Since bad actors have multidirectional interest vectors, the majority of moderators will assume that the consensus is reached by good voters, and will be motivated to vote accordingly.
+
+This acts as a canonical self-fulfilling prophecy.
+
+Domains
+Links are an inherent part of quests, as they usually involve doing something outside of the quest platform.
+
+However, third party sites can be risky as they may advertise scams or contain wallet-drainers. To protect users from this threat, Questfall divides external links into two groups: safe and risky.
+
+To implement this approach, the system maintains a whitelist of safe domains to which users can add new domains through community voting.
+
+Users can automate the process of whitelisting domains, and if there were a reward for adding safe domains to the system, some users could add millions of safe sites and earn a lot of Silver, putting a huge strain on community moderation.
+
+Therefore, since marking a domain as safe for use by quest authors has its own value, there is no reward for adding a domain to the whitelist. And if a proposed domain fails to pass moderation, there is a penalty.
+
+In addition, to avoid whitelisting millions of sites, only level 10 and above users with a positive Silver balance will be allowed to whitelist one domain per week.
+
+Domain Whitelist|Reward|Penalty
+Initiator|-|-500 Silver
+Moderators|+20 Silver|-40 Silver
+
+
+Inclusion in the safe domain whitelist does not mean that the site will be considered safe forever. Users can report any whitelisted domain as risky, and if the community decides it is so, it will be removed from the whitelist.
+
+When users report a whitelisted domain, they are rewarded or penalized depending on whether the community vote keeps the domain on the whitelist (penalty) or removes it (reward).
+
+Each domain report consumes stamina to protect community moderation from DDoS attacks that can be caused by generating tons of such reports.
+
+Domain Report|Reward|Penalty
+Initiator|500 Silver|-100 Silver
+Moderators|30 Silver|-50 Silver
+
+
+Quests
+Quests can be dangerous as a means of scamming quest platform users, they can also violate platform rules or harm third parties.
+
+To prevent malicious quests in Questfall, any user with a positive Silver balance can report a quest. However, to protect good authors from being punished by others, the quest will not be blocked immediately and will remain active during the moderation process.
+
+To ensure that quest reports are resolved as quickly as possible, voting on them will be prioritized.
+
+If the report is approved by community moderation, the reporter will be rewarded, the author of the quest will be punished, and of course the quest itself will be disabled. Otherwise, if the report is rejected, the reporter will be punished.
+
+Fixed rewards in Silver for quest reports can be abused by intentionally creating bad quests on one account and reporting them from another. In this way, an attacker can earn Silver on one account by drowning the Silver balance of many accounts.
+
+However, since each quest requires Silver to publish, this threat will only appear if the reward for the report is greater than the amount of Silver paid to publish the reported quest.
+
+For this reason, the rewards for quest reports in Questfall are not fixed and are determined by the Quest Bounty - the greater the bounty, the greater the reward and penalty for the report.
+
+Quest Report|Reward|Penalty
+Reporter|+10% Silver in the quest|-15% Silver in the quest
+Moderators|50 Silver|-70 Silver
+Workspace|-|-10,000 Silver
+
+
+Completions
+Users can select any quest from the Quest Feed, complete it properly, and increase their mining score by a number of mining points depending on the Quest Bounty and the user's individual parameters such as Mining Power and Mining Boost.
+
+Each completion consumes stamina to protect community moderation from DDoS attacks that can be caused by generating tons of completions.
+
+Many types of quests imply that the completion can be automatically validated by the system, for example, it can be a logic puzzle with the known answer, or it can be a survey with predefined options.
+
+However, many quests will require something to be done outside of Questfall on third-party platforms: from blockchain transactions to posting some content on one of the social media platforms.
+
+And these types of quest completions cannot be validated by the computer, so they should be validated by the moderators. If such a completion passes moderation, the user's mining score will increase, otherwise it will not.
+
+Quest Completion|Reward|Penalty
+Completing (user)|Mining Points|-
+Witnessing (moderators)|+10 Silver|-
+Judging (moderators)|-|-30 Silver
+
+
+This approach means that there is no explicit penalty for a bad completion, since it is nearly impossible to distinguish bad completions based on the user's intent.
+
+However, sometimes it is obvious that a user is trying to abuse the system and has clear malicious intent. For example, it may violate obvious platform rules, it may be offensive, or it may contain links that are dangerous to moderators.
+
+In this case, one of the moderators can report such a completion, and if such a report is approved by the community vote, the user will be penalized, otherwise the reporter will be penalized.
+
+Voting on the completion will be paused until a report is moderated.
+
+Completion Report|Reward|Penalty
+Reporter|1000 Silver|-2000 Silver
+Moderators|40 Silver|-60 Silver
+User||-10,000 Silver
+
+
+
+Seasons (14%)
+While the concept of mining is fair enough, new users will find themselves in a weak position as Questfall becomes more popular, because dedicated veterans will have a huge advantage over newcomers, either through user level or author karma.
+
+In order to allow new users to compete with existing veterans on an equal footing, Questfall implements seasons, each of which lasts twelve weeks, or an average of three months. During the season, 14% of each weekly issue of QFT goes into the seasonal reward pool.
+
+Approximately 168% of the average weekly issue is collected this way over the course of a season.
+
+At the end of each season, the accumulated reward pool is divided between the users who complete quests and the authors who create them. The split between users and authors is the same as the weekly rewards: 80% goes to users and 20% goes to authors.
+
+However, the way in which the rewards are divided between these two groups is different from how it works for weekly rewards. The seasonal reward distribution is based on the leaderboards, one for users and one for authors.
+
+The user leaderboard is based on the total Quest Bounties received. In other words, this leaderboard is created without taking into account the individual mining power and mining boost.
+
+The author leaderboard is based on the average rating of the quests created during the season. However, authors will have to create at least 12 quests per season to be eligible for the leaderboard. This way, popular authors will not have an edge, and at the same time, authors will be motivated to create at least one quest per week.
+
+The reward distribution mechanism is the same for both users and authors - the top 10% of each leaderboard is eligible for rewards, while the remaining 90% is not.
+
+This is necessary for protection against Sybil attacks.
+
+Rewards are distributed linearly to these 10% of places on each leaderboard, so the lowest rewarded place gets one share, the next place gets two shares, and so on up to the 1st place on the leaderboard.
+
+For example, if there are 1000 users in the leaderboard, the top 100 will be rewarded in such a way that the 1st user will get x100 more reward than the 100th, while the 101st and below will get no reward. If there are 2000 users, the 1st user will get x200 more reward than the 200th. And so on.
+
+This mechanic applies to each leaderboard individually, distributing each leaderboard's share of the seasonal reward pool.
+
+As a result, the concept of seasons adds another dimension to the competition in the long run, allowing the most diligent and dedicated users to earn regardless of their previous history in Questfall.
+
+This approach also allows for seasonal collaborations with other projects, which not only brings additional rewards to users, but also encourages QFT burning, as to become a Questfall Season Partner, a third-party team must burn QFT.
+
+
+
+Infrastructure:
+Marketplace
+Many crypto projects consider popular third-party marketplaces such as OpenSea as a means of attracting an audience and selling their NFTs.
+
+Unlike this approach, the marketplace in Questfall plays a crucial role in the overall mechanic as a means of extracting value from the system through trading, and is a necessary piece needed for various user strategies based on crafting and trading.
+
+The main idea behind item trading in Questfall is that there are actually two marketplaces: one for trading of low rarity items (F,E,D) with Gold, and another for trading of higher rarity items (C,B,A) with QFT.
+
+Two different marketplaces are brought together under one interface.
+
+This approach allows the value of in-game Gold to be extracted onto the blockchain by crafting higher rarity items and selling those items for QFT.
+
+For example, a user can use Gold to purchase an item and a Gem, both of rarity D, and then consume the Gem to evolve the item to rarity C, which can be sold for QFT.
+
+In both marketplaces, 10% of the item price is burned as a fee - Gold for lower rarity items and QFT for higher rarity items. The fee is deducted from the total amount a seller pays, so a buyer receives the price paid minus the fee.
+
+While in Questfall v.1 a seller must set a price to list an item on the marketplace, we are looking to implement auction-based pricing for both marketplaces in future releases.
+
+Since items listed on the in-game marketplace do not take up inventory space, the marketplace can be used as storage space, making the inventory weight limit meaningless. To prevent such abuse, there are a finite number of marketplace slots.
+
+A first-level character starts with 1 marketplace slot, which can be increased by adding attribute points to the character's Trading attribute - each point opens another slot.
+
+The trading attribute also reduces the fee a seller pays for each trade.
+
+In summary, the entire marketplace mechanic in Questfall allows for convenient RPG item trading, which forces Gold and QFT burning, and complements crafting, enabling value extraction on the blockchain. It also makes mining much more personal, engaging, and dependent on the results of the work of others.
+
+
+Founder NFTs Burning (1%)
+In order to make Founder NFTs the best possible investment vehicle, 1% of the newly created QFTs are allocated each week to purchase these NFTs from the market via auction and then burn them.
+
+There will be a single auction each week for the Founder NFTs of all six tiers. In the auction, the system will use QFTs to buy back Founder NFTs offered by users, whose bids will be ranked according to the price of a Founder Point in the NFT.
+
+As a result, a system will only be able to buy a certain number of NFTs because it cannot buy just a portion of the Founder Points contained in the NFT. Bought NFTs will be burned and the remaining QFTs that are not enough for the next NFT on the auction will be carried over to the next week.
+
+This means that if user bids are too high this week and the system is unable to buy even one NFT, the amount allocated for buyback will be increased at the next auction. After several such accumulations, the system is guaranteed to meet user bids.
+
+Higher tier NFTs can cause bottlenecks because the price of such NFTs will be much higher, while the bid per Founder Point may be the lowest. However, this approach guarantees that the system will end up buying and burning the maximum amount of Founder Points for the same amount of QFTs.
+
+The burning of Founder NFTs will begin at the launch of Questfall and will continue until there are no NFTs left in circulation. This will not only ensure that the price of the NFTs increases over time, but will also raise the share of the weekly reward for each remaining Founder NFT holder.
+
+In fact, the last owner of the Founder NFT will be able to get as many QFTs as he or she is willing to wait for, as the amount the system will offer to burn that NFT will increase each week.
+
+If there are no Founder NFTs left in circulation, the portion of the QFT weekly issue that should be used to reward founders and burn Founder NFTs will be set to zero, thus increasing the portion of other reward pools.
+
+As a result of burning Founder NFTs, they become a deflationary asset backed by the deflationary QFT, making these NFTs one of the best long-term investment vehicles on the market.
+
+
+Referral Program (5%)
+Marketing is one of the most important factors for the success of any project, especially in the case of Questfall, where the tokenomics is mainly based on user activity.
+While most of the Questfall mechanics are aimed at user retention, the Referral Program is aimed at marketing activities to attract and engage new users.
+This referral program will be launched together with Questfall, so it is not affiliated with IFE, which has its own referral program.
+In order to carry out the program, 5% of the weekly QFT issue will be used to reward users from both sides: ambassadors, who attract audience, and new users, who apply referral code when signing up in the system.
+The weekly program rewards are distributed according to the user's individual mining score, which is calculated based on the amount of Silver the user burns during the week to level up. For example, if Bob used Alice's referral code to join the platform, both his and Alice's mining score will increase as Bob progresses through the levels over the course of a week.
+
+The mining score is calculated as the product of the base, which depends on the amount of Silver burned during the week, and the personal mining power:
+
+MSCORE=BASE*MPOWER
+
+In this way, the interests of both parties are aligned to achieve the main goal of the referral program - ambassadors are motivated to bring new active users to the platforms, while users are incentivized to use the referral codes by receiving additional rewards for their activity.
+
+This will encourage users to look for referral codes when they get the Questfall link, for example from a search engine, and increase the value of the Questfall community, where new users looking for a referral code and ambassadors can meet.
+However, there are two issues that should be addressed to prevent abuse and make the program sustainable. And the availability of this referral program, which is open to everyone, is the first issue.
+There is no need to get the ambassador role from the team. Every user in the system will have a referral code from the beginning and will be able to become an ambassador by spreading the word about Questfall and getting referrals that way.
+This is a threat because it allows users to create fake accounts to increase their share of the rewards offered by the program, which is a classic Sybil attack.
+To solve this issue and protect the referral program from fake account manipulation, the base for calculating the mining score will be an exponent of the amount of Silver burned for leveling up.
+The simple mathematical inequality of the exponent protects against Sybil attacks:
+(a+b)^p >a^p +b^p, if p>1.
+
+
+The exponent does not have to be much greater than one (p = 1.1 will be sufficient):
+
+BASE=S_week^1.1
+
+
+This will discourage fake accounts, because if a user burns Silver on multiple accounts, his mining score will be less than if he burns the same amount on a single account.
+
+While a referrer's mining score is based on the amount of Silver he burns, an ambassador's mining score is based on the difference between two parts of the inequality (LaTeX format):
+\text{MSCORE}_{\text{ambassador}} = \left( \sum_{n=0}^{\text{refs}} \text{MSCORE}_{\text{referrer}_n} \right)^{1.1} - \sum_{n=0}^{\text{refs}} \text{MSCORE}_{\text{referrer}_n}^{1.1}
+
+This exponent approach not only protects against Sybil attacks, but also motivates users to burn as much Silver as possible, as each additional unit increases the mining score in a non-linear fashion, assuming mining power remains the same (which is equal to 1 in the table below).
+
+Accounts|Burned Silver|Mining Score|Increase
+Multiple accounts|111110000|708481415|637.64%
+Ambassador||23082929|
+Referrer 1|10000|25119|251.19%
+Referrer 2|100000|316228|316.23%
+Referrer 3|1000000|3981072|398.11%
+Referrer 4|10000000|50118723|501.19%
+Referrer 5|100000000|630957344|630.96%
+Single account|111110000|708481415|637.64%
+
+
+The second problem that arises is that with a straightforward approach, new users will get a smaller and smaller share of the program's rewards over time, since higher levels will have far more resources and thus generate most of the total mining score due to the exponential nature of the base formula.
+To solve this problem and make the program sustainable over time, the mining power will decrease as the user burns more Silver. In other words, as the user progresses through the levels, his reward in the referral program will decrease.
+Mining power decreases based on the total amount of Silver burned from the start of an account using the formula:
+MPOWER=max(1-10^-8 * S_total, 0)
+
+This approach assumes that the user needs to create a new account to reset the mining power, but it makes no sense to switch from the high-level main account just for the referral program rewards.
+As a result, ambassadors will be forced to constantly recruit new users to keep their earnings high, as the mining score of previously recruited users will slowly decrease.
+The final formula for calculating the mining score is as follows:
+MPOWER=S_week^1.1 * max(1-10^-8 * S_total, 0)
+
+
+Liquidity Program (5%)
+In order for investors to buy Questfall Token (QFT) or for miners to cash out their earnings by selling their QFTs without significant price impact, sufficient liquidity is required.
+However, with the mining approach, it is impossible to build liquidity before token issuance begins. Furthermore, there is no fair mechanism for attracting liquidity until the initial circulating supply is formed and the market is saturated.
+Therefore, the usual solution of rewarding users for keeping their capital in the liquidity pool to cover impermanent losses will not be fair in the first few years of mining.
+We took a different approach - the Liquidity Program in Questfall assumes that users will be rewarded for adding liquidity to the official Uniswap QFT-USDC and burning the LP tokens they receive. This way, the liquidity is locked into the pool forever and is not owned by anyone.
+For short, we will use the term liquidity burning to refer to the addition of liquidity followed by the burning of LP ownership. This approach was first introduced by the Core project.
+Users will receive 5% of the weekly QFT issuance according to their share of the burnt liquidity during the week. This way, if users provide too little liquidity during the week, the reward will not only compensate the cost, but also bring profits, creating and arbitrage opportunity. In other words, on average, liquidity will increase each week by the total value of 5% of that week's QFT issuance.
+For example, if the price of a QFT is $10 and the weekly issuance is 30,000 QFTs, the total reward to Liquidity Program participants will be $15,000 and should be approximately equal to the liquidity burned, which may seem too small.
+However, over the course of a year, assuming the price of QFT and issuance remain the same, the total increase in liquidity will be $780,000. And if the QFT price doubles, the dollar estimate of liquidity growth will also double.
+To further increase the rate at which liquidity grows, there will be an additional reward to incentivize the burning of liquidity - Gems that allow users to increase the rarity tier of clothing RPG items.
+Obviously, users will increase their chances of getting more rare Gems by maximizing their total share of burnt liquidity over the course of the week.
+However, the amount of liquidity burned is not the only parameter that affects the distribution of Gem rewards. See the Gems article to learn more.
+In this way, the more activity in the system, the higher the demand for Gems, the more their price will rise in the secondary market, and the faster liquidity will grow, since the Liquidity Program is the only way to release Gems into circulation.
+Therefore, depending on the price of Gems on the secondary market, users will be adding significantly more liquidity than the weekly QFT reward.
+In our estimation, orders of magnitude more.
+As a result, the Liquidity Program encourages the infinite organic growth of liquidity through an endless stream of weekly rewards, eliminating any possibility of manipulation or rug-pulling by anyone, including the Team.
+
+
+QFT Freezing (5%)
+Ensuring that tokens are not sold by the user for a certain period of time benefits the system by reducing the pressure to sell. To encourage this behavior, 5% of newly created QFTs will be used each week to reward those users who freeze their tokens in the system.
+Freezing will begin at the launch of Questfall and will continue indefinitely, reducing the total amount of QFT in circulation.
+Users can only freeze their tokens for a default period of 15 weeks. After the tokens are frozen, this freeze period decreases by one every week until it is nullified, at which point users can withdraw their tokens. However, users can re-freeze their tokens back to the default 15-week period at any time while the tokens are still frozen.
+The weekly reward is distributed according to each user's individual freeze power, which is calculated as the product of the number of tokens frozen and the number of weeks remaining in the freeze period.
+For example, if the user has frozen 100 QFTs, his freeze power will be 1500 at the end of the first week and 1400 at the end of the second week. In other words, the multiplier used to calculate freeze power decreases by one each week: 15, 14, 13, .... 1, 0.
+This can be thought of as the reward base slowly melting away, meaning that in order to receive the maximum reward in perpetuity, users must re-freeze their tokens on a weekly basis.
+We use the word freezing because staking implies the possibility of losing the stake, while locking implies the fixed reward for a fixed period of time.
+While 5% may not seem like much, the results over the course of a year look different. For example, let's assume that 10% APY is a competitive return on a deposit. Over the course of a year, 52 * 5% = 260% of the weekly issuance will be used to pay out percentages on the frozen QFTs.
+With these inputs, the amount of QFTs that it is profitable to freeze (and earn 10% annually) is 260% * 10 = 2600% of the weekly issue. In other words, it makes sense for users to freeze half of the annual QFT issuance.
+Of course, these calculations are very rough, but they still show the impact of paying out 5% in one week as a return on capital.
+Unlike Bitcoin, the amount of QFT, which is a deflationary token, in circulation relative to the total annual issuance will not be constantly increasing. As a result, a noticeable portion of QFTs will be taken out of circulation by freezing during its entire lifetime, not just at the beginning.
+
+
+Project Expenses (5%)
+The long-term success of any project depends heavily on how it evolves and adapts to the changing world. Therefore, it is very important to have enough resources not only to maintain the project, but also to improve it.
+In order to ensure the long-term sustainability of Questfall, 5% of the weekly QFT issue will be rewarded to the Team, to be used at their discretion, depending on the current situation, to cover necessary costs in three crucial areas:
+    • staff salaries;
+    • hardware rent;
+    • advertising and marketing.
+In the beginning, the Team will cover the project support and development costs with the money raised through the IFE. This may be enough for a year or two. However, in the long run, Deflationary Mining should do its magic and 5% of the QFT issue should be sufficient to cover all costs.
+We understand the obligations that come with such an approach and will act in the best interest of the entire community.
+It is important to note that we have enough experience in the business to learn the importance of separating company and personal money. Therefore, when we talk about the money the Team gets (either via IFE or as a weekly QFT reward), we do not associate it with our personal income as individuals.
+We have Founder NFTs for that.
+This means, for example, that if 5% is too much money that the Team doesn't really need, we will use the excess funds to, for example, increase the Liquidity Program reward or buy back and burn Founder NFTs. Both of these actions will increase our earnings as founders.
+While these statements may seem unlikely in the crypto space, it is a common practice in the real world. And it is the healthiest approach in the long run.
+This separation of personal and company money makes us, as founders, interested in exchanging the Team's QFT without selling it directly into the liquidity pool, as we will suffer the negative effects of such actions just like any other founder, miner, or QFT holder. And there could be many solutions to this problem.
+For example, the Team may have direct connections with people in our community who can pay for the servers in exchange for the QFT reward with a bonus. Or the QFTs of the Team can be used as an event reward when there is a need for marketing activities, instead of paying influencers with the stablecoins. Or QFTs can simply be sold OTC to founders at a discount.
+As a result, we separate ourselves from the Team, which at some point may only consist of hired staff, and do everything in our long-term best interest as founders, and that interest is the same as for every other participant of Questfall - the highest possible QFT price.
+
+
+Gold Withdrawals (5%)
+To increase the value of Gold and provide another way to convert in-game earnings into real-world value, 5% of the weekly QFT issue will go to users in exchange for burning Gold via the auction mechanic.
+Throughout the week, users add their bids to the system auction. Since the price of QFT is volatile and can change throughout the week, bids include the amount of Gold along with its dollar price.
+This way, users can be sure that when they place a bid at the beginning of the week, they will get the amount of QFT whose dollar price is exactly what they want, regardless of QFT fluctuations.
+Bids are sorted by the dollar price users offer for burning their Gold - the lower the price, the higher the bid in the queue. And since the amount of QFTs available for each auction is limited, the order of bids is very important, as there will not be enough QFTs to fill them all.
+In this way, the system is guaranteed to burn the most Gold for the fixed amount of QFT. However, there are two types of user bids: one for the real price (actual bid) and one for the sort order (effective bid).
+And users can lower their effective bids and move up in the queue by increasing the Trading attribute, which can give up to a 20% discount, or by bidding as early in the week as possible, which can give an additional 10%.
+Rewarding early bidding discourages last-minute bid manipulation and allows users to spend less time tracking the auction.
+As a result, users can have an effective bid that is up to 30% lower than the actual bid. Therefore, Gold can be sold to the system for QFT at better prices that would otherwise not pass due to auction competition.
+There will always be enough bids in the auction because the price of Gold above 1? creates an arbitrage opportunity, as users can buy Gold from the system at 1? and sell it in the auction at a higher price. More likely, the market nature of the auction prices will result in the price of Gold being lower than 1?.
+This difference can be thought of as a spread.
+If this were the only mechanism for withdrawing Gold, the price difference between buying Gold from the system at 1? and at the withdrawal auction could be quite large. However, there is another way to withdraw Gold.
+This is done through crafting and item trading. Users who wish to withdraw Gold can spend it on the Questfall marketplace or on loot boxes to obtain items needed for crafting. They can then craft items of higher rarity (C,B,A) and sell them for QFT.
+As a result, trading and the Gold withdrawal auction complement each other, providing users with two independent mechanisms for extracting value from the system, which they can choose based on actual market conditions.
+
+
+Founders' Revenue (10%)
+The funds raised during the Initial Funding Event will be used to build and promote Questfall. This is a one-time opportunity to mint Founder NFTs.
+
+The Team will initially keep 650,550 Founder Points and sell 1,951,650 to the public through the IFE.
+The platform would not exist without the founders, so it is hard to overstate the value they have added. In recognition of their contribution, founders will receive 10% of the newly created QFTs each week from the launch and forever.
+The total number of QFTs to be rewarded to founders in a given week is known in advance as it can be calculated by the formula. This fixed number of tokens will be distributed to all Founder NFT holders at the end of the week according to the individual Founder Point share of each NFT holder.
+For example, if the QFT issue this week is 30,000 QFT and the total amount of Founder Points would be 2,400,000, then each Founder Point earns 30,000 * 10% / 2,400,000 = 0.00125 QFT.
+Since the weekly rewards should be claimed by the user in order to actually issue QFTs and get them into the wallet, and since Founder NFTs can be burned or traded, when such an NFT is burned or traded, any unclaimed tokens are also burned or traded along with the NFT.
+Rewarding founders with a portion of the QFT issuance makes them a rather unique group of users. While all types of activities rewarded by QFT issuance require users to create value during the week to receive another weekly reward, founders are the only participants who are rewarded forever for the value they add just once: by participating in IFE or by purchasing such NFT on the secondary market.
+As a result, the revenue that founders receive in the form of QFT will depend on user activity in the system and the overall success of Questfall.
+However, since QFT is deflationary in nature, and the amount of Founder Points decreases over time, the fiat currency equivalent of the revenue stream should increase over the long term, even with a limited number of dedicated quest miners.
+
+Assets
+Questfall Tokens (QFT)
+Questfall Token (QFT) is based on the Deflationary Mining model, which assumes that on the one hand the system issues tokens to reward users for the value they create, and on the other hand consumers can obtain the synergistic value that the system produces by burning tokens.
+
+Platform|TBA
+Address|Not yet implemented
+Issuing|QFTs are issued in decreasing amounts at the end of each week according to a pre-determined formula for the number of tokens remaining to be issued: 109.5/(W+102.5)
+Burning|QFTs are burned for Gold, which in turn can be used to get benefits from the system
+|QFTs are burned when trading on higher rarity tiers (C,B,A), as 10% of the item's price is taken as a marketplace fee and burned
+|0.1% is burned when QFT is sold through the official DEX pool
+|Some QFTs are locked in the liquidity pool forever because the Liquidity Program assumes that ownership of the liquidity provided is burned
+Utility|Can be burned for Gold
+|Can be used to buy higher rarity RPG items (C,B,A) on the marketplace
+|Can be used to provide liquidity in the official QFT pool
+|Can be frozen for an extendable period for a QFT reward
+Precision|Decimal places: 1070
+Supply|Maximum total supply: 10,000,000 QFT The precision is sufficient to issue QFTs for billions of years, so the entire supply will never actually be issued while the sun is shining. In addition, the QFTs will be burned in huge numbers, especially when the price drops. In our models, this results in a maximum circulating supply of 300,000 QFTs, which is reached in the first year, and then slowly decreases in the long term.
+Circulation|Can be swapped, transferred, and burned like any other ERC-20 token
+Specifics|Weekly issuance is divided into pre-defined pools for different types of values created by users
+|The number of QFTs issued each week decreases
+|QFTs are constantly burned by users for system benefits
+|No tokens are pre-minted by the Team
+|The amount of tokens to be issued and their distribution among pools is set in stone in smart contracts, the ownership of which the Team will burn
+
+Each week, the pre-determined number of QFTs are issued and distributed in pre-defined proportions among several pools of different activity types in which users provide comparable value.
+
+Activity Type|QFT Share
+Burning Founder NFTs|1%
+Referral Program|5%
+Liquidity Program|5%
+QFT Freezing|5%
+Project Development|5%
+Gold Withdrawals|5%
+Founders|10%
+Quest Creation|12.80%
+Quest Completion|51.20%
+
+Unlike Bitcoin, where the reward issued per block decreases every four years, the number of QFTs issued decreases with each weekly issue. With this approach, the time between halvings increases: 2.5 years for the first halving, 3.5 years for the second, 5.1 years for the fourth, 7.1 years for the fifth, and so on.
+
+Thanks to this scheme and its enormous precision, QFT can be issued almost infinitely.
+
+Burning QFT for Gold allows users to get an edge on the platform. And while in many cases it will be the advantage in competing between miners for the greater reward in the future, there is a synergistic value that the system provides to third party consumers. And that is an active and motivated user base.
+
+Quest promotion in this context can be thought of as audience access through advertising. And as long as there are miners in the system, it makes sense to burn QFT to increase the Quest Bounty for quests and thus motivate users to create value with their actions.
+
+As a result, thanks to the Deflationary Mining model, QFT is directly backed by user activity in Questfall. The fundamental reason for the rising price of QFT is not the influx of new money, but the burning of QFT due to user competition, which works even if activity does not grow - it is enough if it just stays the same.
+
+
+Founder NFTs
+Owners of Founder NFTs will receive an unlimited revenue stream from the platform for their contribution to the early development and promotion of Questfall. They are the only participants who will receive a portion (10%) of the weekly QFT issue forever for adding one-time value, as all other users must add value each week to receive another reward.
+
+Platform|TBA
+Address|Not yet implemented
+Issuing|Founder NFTs can only be created as a result of the Initial Funding Event, so any NFTs not minted during the IFE will never be minted
+Burning|1% of weekly QFT issuance will be used to purchase and burn Founder NFTs on the system auction
+Utility|Infinite income stream for founders by distributing 10% of the weekly QFT issue
+Supply|The total supply of Founder NFTs cannot exceed 6300 NFTs.
+A maximum of 4725 NFTs can be minted by the public during the IFE, while 1575 will be minted by the Team.
+Since not all NFTs can be minted by the public during the IFE, the initial supply may be lower. Also, as Founder NFTs are burned by the system, the total supply will decrease over time.
+Circulation|Founder NFTs will be available for trading on any NFT marketplace, but Questfall will have its own marketplace where these NFTs will also be listed
+Specifics|Founder NFTs of higher tiers (C, B, A) give access to the Founders Club
+|Each NFT will grant its owner a certain amount of Gold and Silver during the first year of Questfall
+|A wallet address can have any number of Founder NFTs
+|The revenue stream is distributed by the Founder Points contained in each NFT
+|The amount of Founder Points in an NFT increases with each rarity by x2.243 and is the same for all NFTs of the same tier
+
+
+There are six rarity tiers of Founder NFTs, each of which contains a fixed amount of Founder Points that are used as the basis for QFT distribution each week.
+
+Founder NFT|Points|Total Supply (max)|Total Points (max)
+Common (F)|100|3200|320000
+Uncommon (E)|224|1600|358400
+Rare (D)|502|800|401600
+Epic (C)|1126|400|450400
+Legendary (B)|2526|200|505200
+Mythical (A)|5666|100|566600
+
+The 10% portion of the weekly QFT issuance will be distributed to all Founder NFT holders based on their share of Founder Points. Depending on the amount of NFTs minted by the public, there can be a maximum of 2,602,200 Founder Points. However, as the number of Founder NFTs decreases over time, the share of the remaining holders will increase.
+
+Founder NFTs are a deflationary asset backed by a deflationary QFT. As such, we believe it is the best long-term investment vehicle in the market and will not be selling our NFTs for the foreseeable future. In fact, we see them as a good legacy for our grandchildren.
+
+The QFT reward is accrued for the particular NFT, and to get actual tokens in the wallet, founders must claim them. There is no need to claim the reward each week as the rewarded tokens accumulate and can be claimed all at once.
+
+The need to claim rewarded QFTs means that the tokens are not actually issued until they are in the founder's wallet.
+
+Unclaimed tokens are sold or burned along with the Founder NFT.
+
+During the first 50 weeks (almost a year), each owner of a Founder NFT will receive a certain amount of Gold and Silver. However, if the NFT changes hands, the Gold and Silver for the following weeks will go to the new owner of the NFT.
+
+Founder NFT|Silver|Weekly|Gold|Weekly
+Common (F)|100000 ($100)|2000 ($2)|20000 ($200)|400 ($4)
+Uncommon (E)|200000 ($200)|4000 ($4)|40000 ($400)|800 ($8)
+Rare (D)|400000 ($400)|8000 ($8)|80000 ($800)|1600 ($16)
+Epic (C)|800000 ($800)|16000 ($16)|160000 ($1600)|3200 ($32)
+Legendary (B)|1600000 ($1,600)|32000 ($32)|320000 ($3200)|6400 ($64)
+Mythical (A)|320000 ($3,200)|64000 ($64)|640000 ($6400)|12800 ($128)
+
+As a result, the price of Founder NFTs in the secondary market should include the value of Gold and Silver to be released in the future.
+
+In addition to the Founders Club, Gold and Silver compensation, IFE participants will receive other bonuses, but they are tied to the wallet address, not the NFT. 
+
+
+Discord roles for users:
+    • Common - gives Free Common Box(F) that contains a random RPG item, 250 Gold, and 12.5% discount* for Founder NFTs 
+    • Uncommon - gives  Free Uncommon Box(E) that contains a random RPG item, 500 Gold, and 15% discount* for Founder NFTs 
+    • Rare - gives  Free Rare Box(D) that contains a random RPG item, 750 Gold, and 17.5% discount* for Founder NFTs 
+    • Epic - gives  Free Epic Box(C) that contains a random RPG item, 1000 Gold, and 20% discount* for Founder NFTs 
+    • Legendary - gives  Free Legendary Box(B) that contains a random RPG item, 2000 Gold, and 22.5% discount* for Founder NFTs 
+    • Mythical - gives Free Mythical Box(A) that contains a random RPG item, 3000 Gold, and 25% discount* for Founder NFTs 
+*Discounts do not stack. Only the highest discount role applies!
+
+
+Gold (in-game)
+Gold is an in-game currency that is used as the primary means of payment in the system, as well as a means of value exchange between in-game and on-chain.
+
+Platform|Questfall Infrastructure
+Issuing|Issued by burning QFT at a fixed price of $0.01 (1 cent) per Gold
+|Issued as a one-time bonus to IFE participants
+Burning|Gold is burned as users:
+pay into the system for its utility
+buy issued QFT with Gold through the system auction (100%)
+trade RPG items on the marketplace (10% of the item price is taken by the system as a fee, which is burned)
+Withdrawal|By auctioning off a portion (5%) of the weekly QFT issue
+By crafting items of higher rarity (C,B,A) and selling them on the marketplace
+Utility|Direct utility:
+One of two ways to get Silver (1 Gold for 10 Silver)
+One of two ways to open Loot Boxes (100 Gold for a Loot Box)
+One of two ways to reset character attribute points
+The only way to buy low-rarity (F,E,D) items on the marketplace
+One of many ways to receive a portion of the weekly QFT issue
+Utility accessible via other means:
+Leveling up a character (through Silver)
+Quest promotion by an author (through Silver)
+Acquisition of any rarity (F,E,D,C,B,A) RPG items of all types, except Gems (from loot boxes)
+Acquisition of low rarity (F,E,D) RPG items of all types (through the marketplace)
+Leveling up RPG items (through the marketplace or loot boxes)
+Evolving RPG items rarity tier (through the marketplace)
+Withdrawal of value from the system (via crafting and marketplace, or via system QFT auction)
+Precision|Integer, without decimals
+Supply|Unlimited total supply
+Circulation|Gold can only change hands by trading low rarity RPG items (F,E,D) on the marketplace
+Specifics|Gold is used to move in-game value to and from the blockchain
+Does not add weight to the Inventory
+The value of one Gold is fixed to $0.01
+10% of the marketplace item price taken as a fee, which is burned
+Character can store an unlimited amount of Gold
+Users' Gold balances are stored on the Questfall servers
+
+When a user burns QFT, the price for Gold is taken from the official QFT swap pool and the system deposits the required amount of Gold into the user's account based on the price of QFT in stablecoins in the pool.
+
+Gold allows users to receive all the benefits of the system directly or through the Silver, and since the only way to issue Gold is to burn QFT, it adds value to the entire community. Also, since the price of Gold is set in dollars, users will receive the same amount of Gold for their stablecoins regardless of the price of QFT.
+
+Read more about Gold's overall role in the system in the Deflationary Mining article.
+
+Gold opens the door to user strategies other than direct Quest Mining, as it can be used to extract value from the system. Users can craft items to earn Gold and then withdraw it from the system via the auction, or craft items of higher rarity using items purchased on the marketplace with Gold and then sell them for QFT.
+
+This allows merchants and crafters to earn QFT by providing the necessary equipment to actual miners, making Questfall more complex and engaging.
+
+
+Silver (in-game)
+Silver is an in-game currency designed to equalize those who want to pay for system bonuses with money and those who want to add value to the system through their activity.
+
+Platform|Questfall Infrastructure
+Issuing|Issued by burning Gold in a ratio of 1 Gold to 10 Silver
+Issued as a reward for proper Moderation
+Issued as a one-time bonus to IFE participants
+Burning|Silver is burned as it is paid into the system by users for its utility
+Withdrawal|No
+Utility|The only way to increase the level of a Character
+The only way an author can pay for Quest Bounty
+Precision|Integer, without decimals
+Supply|Unlimited total supply
+Circulation|Silver can't change hands
+Specifics|User can have a negative Silver balance
+Does not add weight to the Inventory
+1 Silver is equal to $0.001 (1/10 of a cent)
+Cannot be withdrawn, can only be used
+Character can store an unlimited amount of Silver
+Users' Silver balances are stored on the Questfall servers
+
+On the one hand, those who have enough money and value their time can buy Silver by burning QFT -> Gold -> Silver, bringing value to the entire community.
+
+On the other hand, those who find leveling up or quest promotion through burning QFT too expensive can earn Silver directly by voting the right way in the moderation, which also adds value to the community.
+
+Silver is debited as a reward for moderation, but it can also be credited as a penalty for bad voting. And since new users can make mistakes when they first start moderating, their Silver balance can go negative.
+
+Since the reward for proper moderation is a leveling opportunity, not a token, the Silver cannot be withdrawn or traded. It can only be used to pay into the system for XP and Quest Bounties.
+
+As a result, Silver is a crucial part of the inner balance of Questfall. It's used not only to balance the interests of the whales and the common users, but also as part of the Sybil defense.
+
+
+Roadmap
+Detailed Project Description
+Scheduled for release in March 2025
+While we spent more than a year specifically developing the Questfall model, it took several years before that to crystallize the idea and overall approach, including our work on the Elysium blockchain. For example, Black-Scholes option pricing had a huge impact on the concept of Deflationary Mining.
+However, we have decided to leave such theoretical details outside of this documentation.
+As a result, we designed the Questfall model with a level of detail that most projects lack, even after they are up and running.
+Before development even starts, we already have everything we need (even if it is not yet published): from prototypes of all the pages in the system to the RPG items' visual design and the special power of the effects they can have.
+Each innovation we mention has a solid background. For example, the common approach of distributing rewards based on the share in the vault, which is widely used in smart contracts to avoid looping, is not sufficient for QFT freezing. So we had to implement our own mathematical model. And write code to verify it.
+Or we spent months on the random generator, evaluating the results against the distribution density and finding ways to collect randomness from the real world. And, of course, we already have a solution that works.
+The same goes for the authorization system and database engine, web server and front-end technologies, we even have code to allow Founder NFT owners to access the private community in Discord.
+And that is how we worked out every aspect of the system.
+Therefore, although the system is quite complex, implementing it in code is not that difficult. Most development time is usually spent working out the details on the fly. Thus, spending a lot of time on planning drastically reduces the time needed for actual coding.
+
+
+Initial Funding Event
+Planned to take place on May 2025 for 3 days
+
+The primary goal of the Initial Funding Event (IFE) is to raise money for the initial development, operation, and marketing of Questfall by selling 75% of the total supply of Founder NFTs to the public, while keeping 25% for the Team.
+
+Founder NFTs will only be minted during the IFE and never again, as it is a one-time event.
+
+Depending on the rarity tier, of which there are six, each Founder NFT contains a certain amount of Founder Points, which are used to distribute the founders' share of the weekly QFT issue. Since the total supply of each rarity tier is limited, the maximum amount of Founder Points is also limited and cannot exceed 2,602,200.
+
+On the one hand, the number of available NFTs decreases by half with each tier and their price doubles respectively. On the other hand, the amount of Founder Points contained in each NFT increases by x2.243. In this way, the higher tiers receive a discount on the price per Founder Point they contain.
+
+Founder NFT|NFT Founder Points|Number of NFTs Team|Number of NFTs IFE|Founder NFT Price|Discount
+Common (F)|100|800|2400|$100|0%
+Uncommon (E)|224|400|1200|$200|10.71%
+Rare (D)|502|200|600|$400|20.32%
+Epic (C)|1126|100|300|$800|28.95%
+Legendary (B)|2526|50|150|$1600|36.66%
+Mythical (A)|5666|25|75|$3200|43.52%
+
+The maximum number of Founder NFTs that can be minted during the IFE is 6300: 1575 by the Team, and 4725 by the public.
+As a result, the total amount of money that can be raised during the IFE is limited to $1,440,000, but since there is a referral program that gives a 10% discount on the price of NFTs and 15% of the full price as a reward to Ambassadors, the final amount that the Team can actually raise is limited to $1080000.
+However, there is no low cap, as we will develop Questfall regardless of the final amount we are able to raise. We will launch the project even if we raise nothing, as we have already put a lot of effort into it and see a great potential in Deflationary Quest Mining.
+
+Of course, it will be much easier and faster to launch Questfall if we can hire several developers, designers and marketers.
+This is why we limit the event to 3 days, because we see it as an opportunity for people to get on board, not for us to make as much money as possible.
+Since any NFTs not minted during the IFE will never be minted afterward, the shares received by existing founders will increase proportionally. So in a sense, selling as few NFTs as possible is in the best interest of every founder (including us).
+But of course we will do our best to attract as many founders as possible, because they bring not only money, but also decentralization, experience, connections, support and fresh ideas.
+
+
+The Founders
+Founders are people who have brought critical value to the project, without whom Questfall would not even exist, and therefore are rewarded with many benefits from the system.
+
+Several bonuses are tied to the wallet address used in IFE and not to the Founder NFT itself, making it more attractive to get NFT during IFE than to buy it later on the secondary market.
+
+All Founders are considered equal, and we as developers do not receive any special bonuses, as the benefits of being a Founder are automatically distributed by the system to each Founder NFT owner according to their share of Founder Points.
+
+There is no limit to the number of Founder NFTs a wallet can have. Therefore, the total share is calculated as the sum of the Founder Points contained in all owned NFTs.
+
+Passive Income for Life with Weekly QFT / NFT
+The mining approach assumes that there is no other way to profit from the system other than receiving a portion of the token issuance. It can be compared to taking profits from a company as dividends in a traditional fiat money approach.
+
+Weekly rewards can be thought of as salaries for employees and payments to vendors based on the value they add to the system during the week, while Founders are the only participants in Questfall who receive an income stream for adding one-time value. Just like shareholders in a real company.
+
+The 10% portion of the weekly QFT issue is distributed to all Founder NFT holders according to their Founder Points, which can be thought of as mining power.
+
+To illustrate the financial results of becoming a Founder, let's look at the first year of Questfall.
+
+Since a total of 1412159 QFTs will be issued in the first year, the Founder's share will be 141217 QFTs. Considering that each NFT is minted during the IFE, the following income will be received by the owners of the various Founder NFT tiers, depending on the average price of the QFT during the year.
+
+Founder NFT|1st Year|QFT=$1|QFT=$10|QFT=$50
+Common (F)|5.43 QFT|$5|$54|$271
+Uncommon (E)|12.16 QFT|$12|$122|$607
+Rare (D)|27.24 QFT|$27|$272|$1362
+Epic (C)|61.11 QFT|$61|$611|$3055
+Legendary (B)|137.08 QFT|$137|$1371|$6854
+Mythical (A)|307.48 QFT|$307|$3075|$15374
+
+Assuming that half of the circulating QFTs (706k) will be in the liquidity pool and half in the hands, there should be approximately $700k in the second side of the pool at the end of the first year for the price of the QFT to be $1. This price provides an annual percentage yield on the investment of approximately 10%, while the base NFT price is compensated in a different way (see the bonus below).
+However, this estimate does not take into account the number of QFTs that will be burned during the first year, which directly affects the QFT price for the same amount of stablecoins in the pool. And since the low QFT price incentivizes QFT burning, we actually expect the QFT price to be higher than $10 at the end of the first year.
+
+Double compensation for NFT costs / NFT
+We want a weekly QFT reward to be a real profit that can be considered independently of the cost of the NFT itself.
+
+To accomplish this, we include in each NFT the amount of Gold necessary to cover the price paid for the NFT on the IFE. Since Gold can only be withdrawn from the system at a market-based discount that is difficult to predict, we include 2x the cost of the NFT in Gold equivalent (1 Gold = $0.01).
+
+Founder NFT|IFE Price|Gold Included|Weekly Release
+Common (F)|$100|20000|400 ($4)
+Uncommon (E)|$200|40000|800 ($8)
+Rare (D)|$400|80000|1600 ($16)
+Epic (C)|$800|160000|3200 ($32)
+Legendary (B)|$1600|320000|6400 ($64)
+Mythical (A)|$3200|640000|12800 ($128)
+
+Since the large amount of Gold in the system can break a balance, the Gold Compensation will be released in equal parts over 50 weeks, or almost a year. In addition to the direct goal of compensation, this approach will also increase the price of Founder NFTs during the first year.
+
+Founders Edition Loot Boxes / IFE Wallet
+Each Founder NFT is granted a certain number of Founders Edition (FE) Loot Boxes. While regular loot boxes in the system are unlimited and available to everyone, FE Loot Boxes are limited and only available to Founders.
+
+FE Loot Boxes have six rarity tiers. While the Common (F) FE Loot Box doubles the chance of getting rarer items compared to the regular loot box, higher tiers will guarantee getting the RPG item of the same rarity as the loot box itself.
+
+Uncommon (E) FE Loot Box will yield an Uncommon (E) item, Rare (D) will yield a Rare (D) item, and so on.
+
+Founder NFT|Founder Edition Loot Boxes
+Common (F)|F x 10
+Uncommon (E)|F x 10 E x 1
+Rare (D)|F x 10 E x 1 D x 1
+Epic (C)|F x 10 E x 1 D x 1 C x 1
+Legendary (B)|F x 10 E x 1 D x 1 C x 1 B x 1
+Mythical (A)|F x 10 E x 1 D x 1 C x 1 B x 1 A x 1
+
+
+FE Loot Boxes are not included in the Founder NFTs themselves, and will be available to Founders when Questfall launches by logging into the system with the wallet address used in IFE. This means that the loot box bonus will not affect the price of the Founder NFT.
+
+However, since there will be no higher rarity RPG items in the system at launch, owners of the rarer Founder NFTs will be the only ones with rarer items for some time. This will allow them to gain an early advantage or sell these RPG items for a profit.
+
+Free Leveling Up and Quest Promotion / NFT
+In Questfall, there is another in-game currency besides Gold - Silver, which can be obtained through proper moderation or by burning Gold - every 1 Gold yields 10 Silver.
+
+Since there is Gold in the Founder NFTs, it can also be used to get Silver. However, this defeats the purpose of NTS cost compensation.
+
+Founders will receive a certain amount of Silver, based on the rarity of their NFT, for the first 50 weeks after Questfall launches. And while Silver is non-tradable and non-withdrawable, Founders will be able to use it to gain an advantage on the platform through leveling up or quest promotion.
+
+Founder NFT|Silver Bonus|Dollar Value|Weekly Release
+Common (F)|100000|$100|2000 ($2)
+Uncommon (E)|200000|$200|4000 ($4)
+Rare (D)|400000|$400|8000 ($8)
+Epic (C)|800000|$800|16000 ($16)
+Legendary (B)|1600000|$1600|32000 ($32)
+Mythical (A)|3200000|$3200|64000 ($64)
+
+Having free Silver each week will give Founders a noticeable advantage, whether they choose to complete quests or promote their own project to the Questfall audience.
+
+Free Gems to Upgrade Clothing / IFE Wallet
+While users can obtain most RPG items from loot boxes, Gems are a special type of RPG item that can only be obtained by participating in the Liquidity Program - by providing liquidity to the DEX pool and burning ownership of the LP tokens received.
+
+Each IFE participant will receive Gems of all rarities not higher than the rarity of the NFT.
+
+Founder NFT|Gems
+Common (F)|F x 1
+Uncommon (E)|F x 1 E x 1
+Rare (D)|F x 1 E x 1 D x 1
+Epic (C)|F x 1 E x 1 D x 1 C x 1
+Legendary (B)|F x 1 E x 1 D x 1 C x 1 B x 1
+Mythical (A)|F x 1 E x 1 D x 1 C x 1 B x 1 A x 1
+
+
+This allows founders to sell their Gems for Gold or QFT, depending on their tier, or to apply them to their own clothing to increase its rarity.
+
+Long-term NFT Price Increase / NFT
+The 1% portion of the weekly QFT issuance is used by the system to buy back and burn Founder NFTs through the auction mechanism based on Founder Point price bids.
+
+This means that the amount of Founder NFTs in circulation will decrease over time, increasing the weekly QFT reward for each remaining Founder. This also means that the price of Founder NFTs will increase over time.
+
+Furthermore, at some point in the future, only one founder will remain, and that founder will be able to sell the last NFT at any price he or she is willing to wait for, as the unused QFTs in the auction accumulate each week.
+
+Private Founders Club / NFT
+The founders of the higher tiers (C, B, A) will have access to the Team's private group, where they will be able to influence the development of the project and receive advance notice of upcoming events.
+
+While this bonus may not seem very valuable to investors who only care about money, the Founders Club will be priceless to those who see the bigger picture and the potential impact that the ideas and approaches implemented in Questfall will have on the entire crypto space and society.
+
+
+The Ambassadors
+The IFE referral program allows influencers, community managers, and even regular users to make quick money by attracting potential founders to the event.
+
+In order to become an Ambassador, you will need to create a ticket in the Questfall Discord Community.
+On the one hand, users who want to become a Founder will receive a 10% discount on the Founder NFT price if they use an Ambassador's referral code.
+Ambassadors, on the other hand, will receive 15% of the full NFT price immediately as the user's transaction will be split into two payments: one for the Team and one for the Ambassador.
+
+Founder NFT|Price|User Payment|Ambassador|Team
+Common (F)|$100|$90|$15|$75
+Uncommon (E)|$200|$180|$30|$150
+Rare (D)|$400|$360|$60|$300
+Epic (C)|$800|$720|$120|$600
+Legendary (B)|$1600|$1440|$240|$1200
+Mythical (A)|$3200|$2880|$480|$2400
+
+A total of $216000 will be distributed to the Ambassadors, who will also have the opportunity to increase their reputation in their communities, as projects like Questfall do not come along very often.
+
+However, a group of enthusiasts and supporters has existed long before IFE. These people will receive a 20% discount, without any referral codes, because attracting people who are already engaged is not what we want from our Ambassadors.
+
+
+Questfall v1.0
+Scheduled for release: TBA
+From a technical point of view, the development of a platform like Questfall is quite straightforward and must solve the tasks common to the majority of web services:
+    • design of the pages;
+    • design of the RPG items;
+    • sandbox for testing the system balance;
+    • web server code;
+    • interface code;
+    • smart contracts.
+The most difficult tasks are getting all the pieces to work together smoothly and protecting the system from hackers and other types of threats, such as DDoS attacks. But as mentioned in the Detailed Project Description article, we had all the critical details worked out before IFE and even had working code for many aspects of the system.
+The launch of Questfall is nothing special, except that we have to do a lot of pre-partnerships in order to have as many quests as possible on the platform beforehand.
+
+However, launching QFT is another story.
+We have considered every possible way to launch QFT with deep liquidity from the start, as this is a common approach now applied to pre-mined tokens. But with mining it seems impossible - in any approach there are holes for manipulation or taking advantage of being first.
+And since we are stubborn in our desire to make a fair system, we decided to launch QFT without liquidity, making everyone equal.
+In fact, the mining approach implies that there is no upfront liquidity, since there are no tokens before the first rewards are distributed. For example, Bitcoin was not tradable for some time.
+There are two activities that require the use of QFTs - Liquidity Program and QFT Freezing, each with a reward of 5% of the issue. During the first week, there will be no QFTs in circulation, so these activities will not be available. Rewards for them will go to the Team at the end of the first week.
+Beginning in the second week, rewards for the Liquidity Program and QFT Freezing will be distributed on a regular basis at 5% of the weekly QFT issue.
+Therefore, the Team will receive a total of 15% or 4728.45 QFT on the first issue.
+Another problem is that since there are no QFTs in existence during the first week, users will not be able to get Gold by burning QFTs. To solve this problem, the Team will hold a Gold pre-sale where users will be able to buy Gold directly from the Team at a discount using stablecoins.
+The initial discount will be 42% and will decrease by 6% daily until it reaches 0. After the first week, Gold can only be obtained by burning QFT.
+In this way, the Team will receive an additional fund of stablecoins, the size of which is difficult to estimate in advance. At the end of the first week after the QFT rewards are distributed, the Team will create a DEX pool with all QFTs received at a price of $1 per QFT: 4728.45 QFT / $4728.45.
+To deepen the liquidity, we will offer all founders and miners to sell their QFT OTC to the Team for $1. All QFT bought this way will be added to the liquidity pool.
+Any funds received during the Gold pre-sale and remaining after the creation of the initial DEX pool will also be used later by the Team to increase liquidity, as we do not need much additional funding for development during the first year of the platform launch, while the ability to trade QFTs is very important for the overall health of the system.
+As a result, there will be a DEX swapping pool starting week two, and liquidity will grow organically due to the Liquidity Program, and there will be no way for anyone to manipulate or profit from the liquidity funds at QFT launch, even the Team.
+
+
+Future Versions
+Future Questfall features after v1.0
+
+While designing the Questfall system, we put many things aside, because they are not crucial for the basic functionality, but can take a lot of effort to work out their details or implementation. However, such functionality can be a huge boost for increasing and keeping the Questfall audience.
+Banner Promotion
+In order to increase the amount of QFTs burned and make Silver even more useful, authors will be able to promote their Workspaces with the banner placed on the Quest Feed. Promoting the Workspace in this way can make it known to the community and increase the number of followers and quest completions.
+
+Users can purchase a one-day banner slot with Silver to promote their Workspace. Slots will only be available for the next 30 days, and the farther away from the current day, the higher the price for the slot.
+
+On the one hand, this guarantees that there will always be users willing to pay the price for promotion, as the price for upcoming days is low. On the other hand, as the demand for banner promotion grows, more users will be willing to pay for it and the slots will be filled further in the future.
+Donations
+We want to allow users to support their favorite authors in the form of Silver donations. 
+Such donations can give a huge boost to new authors who do not yet have a high reputation.
+
+However, allowing Silver to circulate also creates potential threats. For example, a user could create a malicious quest on a junk account, report it from another account, receive Silver for the report, and then donate that Silver to an author. So we decided to leave this feature for later.
+Magic
+In addition to common activities such as mining, crafting, and trading, the efficiency of which can be improved through items, we also want to introduce magic, which can have a significant impact on a user's strategy, as spells learned from spellbooks will be applied to the system itself rather than to a character.
+
+Spells are, in a sense, official hacks and can do almost anything in the system, from increasing the reward for a particular quest to changing the overall website background color for everyone on the platform.
+
+Implementing magic will not only add more variety to possible user strategies, but will also add much more to the system: the Magic character attribute, spellbooks, spells, mana. This will significantly increase the amount of RPG item types in loot boxes and the marketplace.
+
+Elixirs
+While spells affect the environment, elixirs provide various temporary and permanent bonuses to the character itself. Therefore, elixirs can play a crucial role in the mining strategy.
+
+We have already developed a lot of elixir effects that are just waiting to be implemented.
+
+In addition to making mining more varied, elixirs will also add much more diversity to loot boxes.
+Warfare
+Where there are quests and RPG, the next logical step is to implement combat.
+
+We developed a warfare concept (the same as magic) and almost included it in version 1.0, but finally decided to leave it for later.
+
+The concept of Warfare is based on the idea of the strategic board game within Questfall, which requires a new type of RPG item - Warriors. This idea also assumes a new character attribute - Warfare, which determines the maximum number of Warriors a user can have on a game board (world map) at the same time.
+
+The basic principle of Warfare is that the system generates additional mining points for miners (as a percentage of their mining results). These points are generated by the user's mines on the map. In this way, a user can take control of other people's mines and benefit from their work. Or users can protect their mines and receive additional mining points on top of Quest Mining.
+Clans
+While we have not given much thought to clans, it is clear that communities within Questfall with shared goals, rankings, and clan-only activities can dramatically increase platform engagement.
+
+For example, clans can focus on logic puzzles (or any other type of quest) and receive special bonuses for completing such quests. Or clans can create challenges in the form of quests for other users on the platform.
+
+Clans can also have storage for shared resources such as Essence or Gems, bonuses for trading in large quantities, and much more.
+
+But the most important role we expect clans to play is Warfare, where they can even have their own castles. Therefore, clans cannot be well implemented until Warfare itself is up and running.
+Non-Binary Completions
+
+The basic mechanic for quests in Questfall is that there is a minimum quality requirement that the quest completion must meet. Thus, the outcome of each completion is binary - either the completion is rewarded or it is not. And all completions are rewarded equally based on the Quest Bounty set by the quest author.
+
+However, some tasks require the author to create a quest because he or she really needs to solve a particular problem. For example, it can be a web page design, or an article, or a music track, or a 3D model, etc. Since the author really needs only one design of the best quality for the web page, a leaderboard of the completions can be built, ordered by the quality rating done by the community.
+
+Obviously, the rewards for users for such quests will not be the same and will depend on their place in the leaderboard.
+
+As a result, the majority of tasks that are currently solved on freelance platforms can easily be completed on Questfall. Authors will get valuable work done for them in many variations arranged by the crowd, while they add value to the entire community by promoting quests and burning QFT.
+Internal Completions
+Although the Questfall platform in its first version will not support the posting of any type of content except links and screenshots used as proof of quest completion, in future versions we intend to implement basic content types so that users can complete quests with creative content (such as text or images) within the Questfall itself.
+
+This kind of completion is very complementary to non-binary completions, as it allows to create an analog to generative AI, since a user can create a quest to draw a certain picture or solve a math problem, and will get many variants from quest miners.
+API for Third-Party Projects
+Currently, there is no common approach to building a community of real people in the crypto space. As a result, many projects suffer Sybil attacks at launch from multi-accounts and bots.
+
+By having a working Sybil defense mechanism, Questfall can provide other projects with an automated means to build a community of real people, leaving multi-accounts and bots outside.
+Real-World Quests
+The ultimate goal of Questfall is to create a full-fledged economy.
+
+In this context, quests can be seen as contracts, which are the crucial part of any human interaction, since any activity or exchange is based on an agreement or some rules. The community moderation can play the role of a jury that decides whether the quest has been properly completed or not.
+
+In this way, Questfall will allow to go out of the box of fiat economy and create its own system that is more fair and based on transparent rules.
+
+However, the main problem with real world quests is witnessing the results of quest completion, as photos and even videos can be easily faked with AI nowadays.
+
+We are considering many different approaches for witnessing, from signing the photo or video with special hardware to witnessing through online video calls.
+
+But when implemented, real-world quests will allow, for example, local quests where a worker who is not geographically far away can perform a specific task. This will make it possible to find a needed person nearby for any kind of work: babysitter, maid, construction worker, gardener, pool cleaner, etc.
